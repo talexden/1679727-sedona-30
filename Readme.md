@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Aleksey Titov](https://up.htmlacademy.ru/htmlcss/30/user/1679727).
-* Наставник: [Андрей Ефимов](https://htmlacademy.ru/profile/id367335).
+* Наставник: [Андрей Ефимов](https://up.htmlacademy.ru/htmlcss/30/user/367335).
 
 ---
 
