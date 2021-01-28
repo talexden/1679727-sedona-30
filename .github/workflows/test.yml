@@ -1,0 +1,23 @@
+name: GitHub Pages test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: Install dependencies
+      run: |
+        npm i
+    - name: Run test
+      run: |
+        npm test
