@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона: Гостинницы</title>
@@ -7,23 +7,26 @@
     <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/180.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic;display=swap">
+    <!-- <link href="css/normalize.css" rel="stylesheet"> -->
+    <link href="css/style.css" rel="stylesheet">
   </head>
-  <body>
-    <header>
-      <a href="index.html"><img src="img/logo.svg" alt="Логотип - город Седона" width="138" height="70"></a>
-      <nav>
-        <ul>
+  <body class="page-body">
+    <header class="main-header">
+      <nav class="main-nav">
+        <a class="main-logo" href="index.html"><img src="img/logo.svg" alt="Логотип - город Седона" width="138" height="70"></a>
+        <ul class="site-nav">
           <li><a href="blank.html">Информация</a></li>
           <li><a href="blank.html">Фото и видео</a></li>
           <li><a href="blank.html">Карта штата</a></li>
-          <li><a>Гостиницы</a></li>
+          <li><a class="site-nav-current" href="#!">Гостиницы</a></li>
         </ul>
       </nav>
     </header>
-    <main>
-      <h1>Поиск остиницы Седоны</h1>
+    <main class="container">
+      <h1 class="visually-hidden">Поиск остиницы Седоны</h1>
       <section>
-        <h2>Фильтр гостиниц</h2>
+        <h2 class="visually-hidden">Фильтр гостиниц</h2>
         <form action="https://echo.htmlacademy.ru/" method="get">
           <fieldset>
             <legend>Инфраструктура:</legend>
@@ -64,9 +67,9 @@
         </form>
       </section>
       <section>
-        <h2>Результаты поиска</h2>
+        <h2 class="visually-hidden">Результаты поиска</h2>
         <header>
-          <h3>Сортировка</h3>
+          <h3 class="visually-hidden">Сортировка</h3>
           <p>Найдено: 3</p>
           <ul>
             <li><a>По цене</a></li>
@@ -109,23 +112,23 @@
         </ul>
       </section>
     </main>
-    <footer>
-      <section>
-        <h2>Как нас найти</h2>
-        <a href="#!">#VISITSEDONA</a><br>
-        <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
+    <footer class="main-footer">
+      <section class="footer-contacts">
+        <h2 class="visually-hidden">Как нас найти</h2>
+        <a class="footer-hashtag" href="#!">#VISITSEDONA</a><br>
+        <a class="footer-phone"   href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
       </section>
-      <section>
-        <h2>Мы в социальных сетях</h2>
+      <section class="footer-social">
+        <h2 class="visually-hidden">Мы в социальных сетях</h2>
         <ul>
-          <li><a href="#!">twitter</a></li>
-          <li><a href="#!">facebook</a></li>
-          <li><a href="#!">youtube</a></li>
+          <li><a class="social-button" href="#!">facebook</a></li>
+          <li><a class="social-button" href="#!">twitter</a></li>
+          <li><a class="social-button" href="#!">youtube</a></li>
         </ul>
       </section>
-      <section>
-        <h2>Копирайт</h2>
-        <p>Website by <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" alt="Логотип htmlacademy.ru"></a></p>
+      <section class="footer-copyright">
+        <h2 class="visually-hidden">Копирайт</h2>
+        <p>Website by <a class="button" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" alt="Логотип htmlacademy.ru"></a></p>
       </section>
     </footer>
   </body>

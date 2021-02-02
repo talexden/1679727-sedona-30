@@ -1,8 +1,8 @@
 {
   "private": "true",
   "scripts": {
-    "test": "gulp test",
-    "start": "gulp"
+    "test": "gulp test --silent",
+    "start": "gulp --silent"
   },
   "husky": {
     "hooks": {

@@ -20,7 +20,14 @@ const cssTest = () => src('css/**/*.css')
     editorconfig: '.editorconfig'
   }))
   .pipe(lintspaces.reporter())
-	.pipe(stylelint());
+	.pipe(stylelint({
+    reporters: [
+      {
+        console: true,
+        formatter: 'string'
+      }
+    ]
+  }));
 
 const reload = (done) => {
   browserSync.reload();
