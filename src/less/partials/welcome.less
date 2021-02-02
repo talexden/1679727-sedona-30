@@ -1,0 +1,22 @@
+/* welcome */
+
+.welcome-block {
+  position: relative;
+  padding: 77px;
+  background: var(--background-image-color) url("../img/background-main.jpg") no-repeat;
+}
+
+.welcome-pcture {
+  display: block;
+  margin: auto;
+}
+
+.welcome-block::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 57px;
+  background-image: url("../img/icons/welcome-mask.svg");
+}

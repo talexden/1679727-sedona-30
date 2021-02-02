@@ -1,0 +1,17 @@
+<header class="main-header">
+  <nav class="main-nav">
+    <a class="main-logo" href="#!">
+      <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
+    </a>
+    <ul class="site-nav">
+      <li><a href="blank.html">Информация</a></li>
+      <li><a href="blank.html">Фото и видео</a></li>
+      <li><a href="blank.html">Карта штата</a></li>
+      {% if page == 'catalog' %}
+        <li><a class="site-nav-current" href="catalog.html">Гостиницы</a></li>
+      {% else %}
+        <li><a href="catalog.html">Гостиницы</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>

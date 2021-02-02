@@ -1,0 +1,56 @@
+<section class="search-hotel">
+  <h2 class="visually-hidden">Поиск гостиницы</h2>
+  <p>Заинтересовались?</p>
+  <p class="color-blacky">Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне</p>
+  <button class="button button-style2 search-window-button" type="button">Поиск гостиницы в Седоне</button>
+  <form class="search-form" action="htmlacademy.ru" method="get">
+    <p>
+      <label class="form-label" for="check-in-date">Дата заезда:</label>
+      <input class="form-input data" id="check-in-date" type="text" placeholder="24 апреля 2017">
+      <button class="form-input-button" type="button">
+        <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/icons/sprite.svg#calendar"/>
+        </svg>
+      </button>
+    </p>
+    <p>
+      <label class="form-label" for="check-out-date">Дата заезда:</label>
+      <input class="form-input data" id="check-out-date" type="text" placeholder="4 июля 2017">
+      <button class="form-input-button" type="button">
+        <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/icons/sprite.svg#calendar"/>
+        </svg>
+      </button>
+    </p>
+    <p>
+      <label class="form-label" for="adults">Взрослые:</label>
+      <button class="form-input-button" type="button">
+        <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/icons/sprite.svg#decrease"/>
+        </svg>
+      </button>
+      <input class="form-input number" id="adults" type="number" value="2">
+      <button class="form-input-button" type="button">
+        <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/icons/sprite.svg#increase"/>
+        </svg>
+      </button>
+    </p>
+    <p>
+      <label class="form-label" for="children">Дети:</label>
+      <button class="form-input-button" type="button">
+        <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/icons/sprite.svg#decrease"/>
+        </svg>
+      </button>
+      <input class="form-input number" id="children" type="number" value="0">
+      <button class="form-input-button" type="button">
+        <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/icons/sprite.svg#increase"/>
+        </svg>
+      </button>
+    </p>
+    <button class="button button-style1 form-submit-button" type="submit">Найти</button>
+  </form>
+  <img src="img/map.jpg" alt="Гостиницы на карте" width="1199" height="593">
+</section>
