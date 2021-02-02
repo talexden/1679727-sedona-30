@@ -1,0 +1,92 @@
+/* search hotel */
+
+.search-hotel .title {
+  font-size: 30px;
+  line-height: 24px;
+}
+
+.search-window-button {
+  width: 568px;
+  min-height: 86px;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+/* search window */
+
+.search-window {
+  width: 568px;
+  height: 395px; /* нужно будет потом поменять на min-height: ; */
+}
+
+.search-form p {
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+
+.form-input {
+  box-sizing: border-box;
+  height: 38px;
+  font: inherit;
+  text-transform: inherit;
+  background-color: var(--background-light-gray);
+  border: none;
+}
+
+.data {
+  width: 308px;
+}
+
+.number {
+  width: 38px;
+  text-align: center;
+  appearance: none;
+}
+
+.form-input::placeholder {
+  opacity: 1;
+}
+
+.form-input:hover {
+  background-color: var(--background-mid-gray);
+}
+
+.form-input:focus {
+  background: none;
+  border: 2px solid var(--color-midy-gray);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.form-input-button {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  color: var(--color-dark-gray);
+  background-color: var(--background-light-gray);
+  border: none;
+}
+
+.form-input-button:hover {
+  color: var(--color-black);
+}
+
+.form-input-button:active {
+  color: var(--color-blue);
+}
+
+.form-submit-button {
+  width: 458px;
+  min-height: 58px;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+/* убираем стрелочки у намберс, как установить и автоматизировать вендорные префиксы? */
+/*
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+} */
