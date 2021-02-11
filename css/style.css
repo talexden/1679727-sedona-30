@@ -1,3 +1,27 @@
+/* fonts */
+
+@font-face {
+  font-weight: 400;
+  font-family: "PT Sans";
+  font-style: normal;
+  src:
+    /* local("PT Sans"), */
+    url("../fonts/PTSans.woff2") format("woff2"),
+    url("../fonts/PTSans.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: "PT Sans";
+  font-style: normal;
+  src:
+    /* local("PT Sans"), */
+    url("../fonts/PTSans-Bold.woff2") format("woff2"),
+    url("../fonts/PTSans-Bold.woff") format("woff");
+}
+
+/* var */
+
 :root {
   --basic-black: #000000;
   --basic-white: #ffffff;
@@ -22,16 +46,23 @@
   --color-midy-gray: #e5e5e5e5;
 }
 
+/* global */
+
 body {
-  min-width: 1200px;
   margin: 0;
   padding: 0;
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
-  font-family: "PT Sans Narrow", "Arial", sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   text-transform: uppercase;
   font-style: normal;
+}
+
+.wrapper {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 a {
@@ -51,10 +82,7 @@ img {
   color: var(--color-black);
 }
 
-.site-nav,
-.reasons-list,
-.features-list,
-.social-list {
+.site-nav {
   list-style: none;
 }
 
@@ -92,6 +120,11 @@ img {
 .reasons-items:nth-child(n+3) > p,
 .search-hotel > p {
   color: var(--color-blacky);
+}
+
+.reasons-list,
+.features-list {
+  list-style: none;
 }
 
 p.title {
@@ -152,27 +185,7 @@ p.title {
   background-color: var(--background-blue);
 }
 
-/* footer */
-
-.footer-contacts a {
-  font-weight: bold;
-  font-size: 21px;
-  line-height: 26px;
-  color: var(--color-black);
-}
-
-.social-list a {
-  display: inline-block;
-  width: 46px;
-  height: 48px;
-  background-color: var(--background-blue);
-}
-
-.footer-copyright p {
-  line-height: 26px;
-}
-
-/* modal window */
+/* search window */
 
 .search-window {
   width: 568px;
@@ -237,6 +250,31 @@ p.title {
   fill: var(--color-blue);
 }
 
+/* footer */
+
+
+.social-list {
+  list-style: none;
+}
+
+.footer-contacts-link {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+  color: var(--color-black);
+}
+
+.social-list a {
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  background-color: var(--background-blue);
+}
+
+.footer-copyright p {
+  line-height: 26px;
+}
+
 /* убираем стрелочки у намберс */
 
 /* -------Эфекты--------- */
@@ -286,13 +324,6 @@ p.title {
   color: var(--color-white-opacity);
   background-color: var(--background-deep-brown);
 }
-
-.container {
-  /* max-width: <...>px; */
-  margin-right: auto;
-  margin-left: auto;
-}
-
 
 .visually-hidden {
   position: absolute;
