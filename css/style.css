@@ -23,17 +23,18 @@
 /* var */
 
 :root {
+  --background-white: #ffffff;
+  --background-gray: #eeeeee;
+  --background-light-gray: #f2f2f2;
+  --background-mid-gray: #ebebeb;
+  --background-image-color: #cacacb;
   --background-blue: #81b3d2; /* rgb(129, 179, 210) */
   --background-mid-blue: #669ec0;
   --background-deep-blue: #5496bd;
-  --background-gray: #eeeeee;
   --background-brown: #766357;
   --background-mid-brown: #604e43;
   --background-deep-brown: #503e33;
   --background-footer: #ffffffe6; /* rgba(255, 255, 255, 0.9) */
-  --background-light-gray: #f2f2f2;
-  --background-mid-gray: #ebebeb;
-  --background-image-color: #cacacb;
   --color-black: #000000;
   --color-natural-black: #231f20;
   --color-blacky: #333333;
@@ -54,12 +55,15 @@ body {
   line-height: 21px;
   font-family: "PT Sans", "Arial", sans-serif;
   text-transform: uppercase;
+  background-color: var(--background-light-gray);
 }
 
 .wrapper {
   width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  background-color: var(--background-white);
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
 a {
@@ -78,10 +82,19 @@ img {
 
 /* header */
 
+/* .main-header {
+  height: 56px;
+} */
+
 .main-nav {
   font-weight: 700;
   line-height: 26px;
 }
+/*
+.main-logo {
+  position: absolute;
+  z-index: 2;
+} */
 
 .site-nav {
   list-style: none;
@@ -348,6 +361,13 @@ input::-webkit-inner-spin-button {
   background-color: var(--background-deep-brown);
 }
 
+/* Стилизация вложенной страницы */
+
+.filter-form {
+  width: 1200px;
+  height: 217px;
+  background-image: url("../img/background-catalog.jpg");
+}
 /* Прячем невидимые эементы */
 
 .visually-hidden {
@@ -356,6 +376,10 @@ input::-webkit-inner-spin-button {
   height: 1px;
   margin: -1px;
   clip: rect(0 0 0 0);
+}
+
+.container {
+  text-align: center;
 }
 
 /* Remove outline on the forms and links */
