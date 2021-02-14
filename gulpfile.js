@@ -3,7 +3,10 @@ const htmlValidator = require('gulp-w3c-html-validator');
 const htmlhint = require('gulp-htmlhint');
 const lintspaces = require('gulp-lintspaces');
 const stylelint = require('gulp-stylelint');
+const twig = require('gulp-twig');
+const data = require('gulp-data');
 const svgstore = require('gulp-svgstore');
+const htmlBeautify = require('gulp-html-beautify');
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const imagemin = require('gulp-imagemin');
@@ -34,6 +37,16 @@ const htmlTest = () => src('*.html')
 	.pipe(htmlhint.reporter())
 	.pipe(htmlValidator())
 	.pipe(htmlValidator.reporter());
+
+const htmlBuild = () => src('src/twig/pages/**/*.twig')
+	.pipe(data((file) => {
+		return {
+			page: file.path.replace(/\\/g, '/').replace(/^.*?twig\/pages\/(.*)\.twig$/, '$1')
+		};
+	}))
+	.pipe(twig())
+	.pipe(htmlBeautify())
+	.pipe(dest('.'));
 
 const cssTest = () => src('src/less/**/*.less')
 	.pipe(lintspaces({
@@ -77,13 +90,13 @@ const watchTask = () => {
     ui: false
   });
 
-	watch('**/*.html', series(htmlTest, reload));
+	watch('src/twig/**/*.twig', series(htmlBuild, htmlTest, reload));
 	watch('src/less/**/*.less', series(cssTest, cssBuild, reload));
 	watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, reload));
 };
 
 const test = parallel(htmlTest, cssTest);
-const build = parallel(cssBuild, spriteBuild);
+const build = parallel(htmlBuild, cssBuild, spriteBuild);
 
 exports.test = test;
 exports.build = build;
