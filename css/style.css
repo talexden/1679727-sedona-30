@@ -144,11 +144,7 @@ img {
 /* welcome */
 .welcome-block {
   position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 1200px;
-  min-height: 509px;
-  padding: 60px;
+  padding: 77px;
   background: var(--background-image-color) url("../img/background-main.jpg") no-repeat;
 }
 .welcome-pcture {
@@ -165,11 +161,8 @@ img {
   background-image: url("../img/icons/welcome-mask.svg");
 }
 /* 5 reasons */
-.reasons > p,
-.features-list p,
-.reasons-items:nth-child(n+3) > p,
-.search-hotel > p {
-  color: var(--color-blacky);
+.reasons {
+  text-align: center;
 }
 .reasons-list {
   list-style: none;
@@ -177,22 +170,20 @@ img {
 .features-list {
   list-style: none;
 }
-p.title {
+.reasons-lead {
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
-  color: var(--color-black);
 }
-.reasons-list h3,
-.reasons-list h4 {
+.reasons-item-title {
   font-weight: 700;
   font-size: 21px;
 }
-.reasons-items .blue-box {
+.reasons-blue-box {
   color: var(--color-white);
   background: var(--color-blue);
 }
-.reasons-list .gray-box {
+.reasons-gray-box {
   background: var(--background-gray);
 }
 /* search hotel */
@@ -221,6 +212,7 @@ p.title {
 .form-input {
   box-sizing: border-box;
   height: 38px;
+  overflow: hidden;
   font: inherit;
   text-transform: inherit;
   background-color: var(--background-light-gray);
