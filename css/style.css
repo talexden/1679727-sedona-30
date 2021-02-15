@@ -56,24 +56,24 @@ img {
   border: none;
 }
 /* buttons  - стиль-1  сине-белый */
-.button-style1 {
+.button-style-primary {
   background-color: var(--color-blue);
 }
-.button-style1:hover {
+.button-style-primary:hover {
   background-color: var(--background-mid-blue);
 }
-.button-style1:active {
+.button-style-primary:active {
   color: var(--color-dark-white);
   background-color: var(--background-deep-blue);
 }
 /* buttons  - стиль-2  коричнево-белый */
-.button-style-2 {
+.button-style-secondary {
   background: var(--background-brown);
 }
-.button-style-2:hover {
+.button-style-secondary:hover {
   background-color: var(--background-mid-brown);
 }
-.button-style-2:active {
+.button-style-secondary:active {
   color: var(--color-dark-white);
   background-color: var(--background-deep-brown);
 }
@@ -93,7 +93,7 @@ img {
 .nav-list {
   list-style: none;
 }
-.nav-list-current {
+.nav-list-item-current {
   color: var(--color-brown);
 }
 .nav-list a:hover {
@@ -286,7 +286,7 @@ input::-webkit-inner-spin-button {
   margin-right: auto;
   margin-left: auto;
 }
-.color-text-1 {
+.color-text-primary {
   color: var(--color-blacky);
 }
 /* fonts */
