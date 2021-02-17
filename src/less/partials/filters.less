@@ -1,5 +1,57 @@
+.filter {
+  background: var(--background-image-color) url("../img/background-catalog.jpg") no-repeat;
+}
+
 .filter-form {
-  width: 1200px;
-  height: 217px;
-  background-image: url("../img/background-catalog.jpg");
+  display: flex;
+  color: var(--color-white);
+  background: none;
+}
+
+.filter-form-fieldset-legend {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.filter-form-fieldset {
+  border: none;
+}
+
+.form-list {
+  list-style: none;
+}
+
+.filter-form-input-text-group {
+  display: flex;
+  width: 317px;
+  height: 36px;
+  border: 2px solid var(--color-white);
+}
+
+.filter-form-input-text {
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+.input-text-high {
+  order: 3;
+}
+
+.filter-form-input-text-group::after { // не уверен, что следует делать так, проверил
+  content: "";
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 22px;
+  background-image: url("../img/icons/vertical-line.svg");
+}
+
+.filter button {
+  padding: 7px 35px 8px 36px;
+  background: none;
+  border: 2px solid var(--color-white);
 }
