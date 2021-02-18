@@ -29,75 +29,75 @@
         <header class="filter">
           <h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
           <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset class="filter-form-fieldset form-fieldset-infrastructure">
-              <legend class="filter-form-fieldset-legend">Инфраструктура:</legend>
+            <fieldset class="filter-fieldset filter-fieldset-primary">
+              <legend class="filter-fieldset-legend">Инфраструктура:</legend>
               <ul class="form-list">
-                <li class="form-items">
-                  <label class="checkbox-label-basin"><input class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
+                <li class="filter-items">
+                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
                 </li>
-                <li class="form-items">
-                  <label class="checkbox-label-parking"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
+                <li class="filter-items">
+                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
                 </li>
-                <li class="form-items">
-                  <label class="checkbox-label-wi-fi"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
+                <li class="filter-items">
+                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-form-fieldset form-fieldset-type">
-              <legend class="filter-form-fieldset-legend">Тип жилья:</legend>
-              <ul class="form-list">
-                <li class="form-items">
-                  <label class="checkbox-label-hotel"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
+            <fieldset class="filter-fieldset filter-fieldset-secondary">
+              <legend class="filter-fieldset-legend">Тип жилья:</legend>
+              <ul class="filter-list">
+                <li class="filter-items">
+                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
                 </li>
-                <li class="form-items">
-                  <label class="checkbox-label-motel"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
+                <li class="filter-items">
+                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
                 </li>
-                <li class="form-items">
-                  <label class="checkbox-label-apartments"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
+                <li class="filter-items">
+                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-form-fieldset form-fieldset-cost">
-              <legend class="filter-form-fieldset-legend">Стоимость в сутки (Р):</legend>
-              <div class="filter-form-input-text-group">
-                <input class="filter-form-input-text input-text-low" type="text" placeholder="От 0">
-                <input class="filter-form-input-text input-text-high" type="text" placeholder="До 3000">
+            <fieldset class="filter-fieldset form-fieldset-tertiary">
+              <legend class="filter-fieldset-legend">Стоимость в сутки (Р):</legend>
+              <div class="filter-input-text-group">
+                <input class="filter-input-text" type="text" placeholder="От 0">
+                <input class="filter-input-text" type="text" placeholder="До 3000">
               </div>
-              <div class="filter-form-input-range-group">
-                <input class="range filter-form-input-range-lower" id="filter-form-input-range-lower" type="range" min="0" max="3000" value="0">
-                <input class="range filter-form-input-range-higher" id="filter-form-input-range-higher" type="range" min="0" max="3000" value="3000">
+              <div class="filter-input-range-group">
+                <input class="range filter-input-range-lower" id="filter-input-range-lower" type="range" min="0" max="3000" value="0">
+                <input class="range filter-input-range-higher" id="filter-input-range-higher" type="range" min="0" max="3000" value="3000">
               </div>
-              <button class="button filter-form-submit-button" type="submit">Показать</button>
+              <button class="button filter-submit-button" type="submit">Показать</button>
             </fieldset>
           </form>
         </header>
-        <section class="sorting">
+        <section class="sorting-section">
           <h2 class="visually-hidden">Результаты поиска</h2>
-          <header class="header-sorting">
+          <p class="sorting-lead">Найдено: 3</p>
+          <header class="sorting">
             <h3 class="sorting-title">Сортировка:</h3>
-            <p class="header-sorting-lead">Найдено: 3</p>
-            <ul class="header-sorting-list-primory">
-              <li class="header-sorting-item-primory">
-                <a class="sorting-item-primory-cost sorting-item-primory-curent">По цене</a>
+            <ul class="sorting-list-primary">
+              <li>
+                <a class="sorting-primary sorting-primary-current">По цене</a>
               </li>
-              <li class="header-sorting-item-primory">
-                <a class="sorting-item-primory-rating" href="#!">По рейтингу</a>
+              <li>
+                <a class="sorting-primary" href="#!">По рейтингу</a>
               </li>
-              <li class="header-sorting-item-primory">
-                <a class="sorting-item-primory-type" href="#!">По типу</a>
+              <li>
+                <a class="sorting-primary" href="#!">По типу</a>
               </li>
             </ul>
-            <ul class="header-sorting-list-secondary">
-              <li class="header-sorting-item-secondary">
-                <a href="#!">
+            <ul class="sorting-list-secondary">
+              <li>
+                <a class="sorting-secondary" href="#!">
                   <span class="visually-hidden">Сортировка по возрастанию</span>
                   <svg class="symbol sorting-item-lower-first-icon" width="11" height="10" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/sprite.svg#lower-first" />
                   </svg>
                 </a>
               </li>
-              <li class="header-sorting-item-secondary">
-                <a class="sorting-item-secondary-curent">
+              <li>
+                <a class="sorting-secondary sorting-secondary-current">
                   <span class="visually-hidden">Сортировка по убыванию</span>
                   <svg class="symbol sorting-item-higher-first-icon" width="11" height="10" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/sprite.svg#higher-first" />
@@ -106,54 +106,36 @@
               </li>
             </ul>
           </header>
-          <ul class="card-list">
-            <li class="card-item">
-              <h4 class="card-item-title">Amara Resort &amp; Spa</h4>
-              <img class="card-item-image" src="img/amara-resort-spa.jpg" alt="Гостиница Amara Resorting, вид снаружи" width="135" height="90">
-              <p class="card-item-type">Гостиница</p>
-              <p class="card-item-cost">От 4000 Р.</p>
-              <a class="button button-primary button-card-details" href="#!">Подробнее</a>
-              <a class="button button-secondary button-card-booking" href="#!">Забронировать</a>
-              <div class="card-item-rating-box">
-                <ul class="star-rating-list">
-                  <li class="star-rating-item"></li>
-                  <li class="star-rating-item"></li>
-                  <li class="star-rating-item"></li>
-                  <li class="star-rating-item"></li>
-                </ul>
-                <p class="guest-rating">Рейтинг: 8,5</p>
-              </div>
+          <ul class="cards-list">
+            <li class="cards-item">
+              <h4 class="cards-item-title">Amara Resort &amp; Spa</h4>
+              <img class="cards-item-image" src="img/amara-resort-spa.jpg" alt="Гостиница Amara Resorting, вид снаружи" width="135" height="90">
+              <p class="cards-item-type">Гостиница</p>
+              <p class="cards-item-cost">От 4000 Р.</p>
+              <a class="button button-primary cards-button" href="#!">Подробнее</a>
+              <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+              <p class="cards-star-rating star-rating-4"><span class="visually-hidden">Четыре звезды</span></p>
+              <p class="cards-guest-rating">Рейтинг: 8,5</p>
             </li>
-            <li class="card-item">
-              <h4 class="card-item-title">Desert Quail Inn</h4>
-              <img class="card-item-image" src="img/desert-quail-inn.jpg" alt="Гостиница Desert Quail Inn, вид снаружи" width="135" height="90">
-              <p class="card-item-type">Мотель</p>
-              <p class="card-item-cost">От 3000 Р.</p>
-              <a class="button button-primary button-card-details" href="#!">Подробнее</a>
-              <a class="button button-secondary button-card-booking" href="#!">Забронировать</a>
-              <div class="card-item-rating-box">
-                <ul class="star-rating-list">
-                  <li class="star-rating-item"></li>
-                  <li class="star-rating-item"></li>
-                  <li class="star-rating-item"></li>
-                </ul>
-                <p class="guest-rating">Рейтинг: 8,9</p>
-              </div>
+            <li class="cards-item">
+              <h4 class="cards-item-title">Desert Quail Inn</h4>
+              <img class="cards-item-image" src="img/desert-quail-inn.jpg" alt="Гостиница Desert Quail Inn, вид снаружи" width="135" height="90">
+              <p class="cards-item-type">Мотель</p>
+              <p class="cards-item-cost">От 3000 Р.</p>
+              <a class="button button-primary cards-button" href="#!">Подробнее</a>
+              <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+              <p class="cards-star-rating star-rating-3"><span class="visually-hidden">Три звезды</span></p>
+              <p class="cards-guest-rating">Рейтинг: 8,9</p>
             </li>
-            <li class="card-item">
-              <h4 class="card-item-title">Villas at Poco Diablo</h4>
-              <img class="card-item-image" src="img/villas-at-poco-diablo.jpg" alt="Гостиница Villas at Poco Diablo, вид снаружи" width="135" height="90">
-              <p class="card-item-type">Апартаменты</p>
-              <p class="card-item-cost">От 2000 Р.</p>
-              <a class="button button-primary button-card-details" href="#!">Подробнее</a>
-              <a class="button button-secondary button-card-booking" href="#!">Забронировать</a>
-              <div class="card-item-box-rating">
-                <ul class="star-rating-list">
-                  <li class="star-rating-item"></li>
-                  <li class="star-rating-item"></li>
-                </ul>
-                <p class="guest-rating">Рейтинг: 9,2</p>
-              </div>
+            <li class="cards-item">
+              <h4 class="cards-item-title">Villas at Poco Diablo</h4>
+              <img class="cards-item-image" src="img/villas-at-poco-diablo.jpg" alt="Гостиница Villas at Poco Diablo, вид снаружи" width="135" height="90">
+              <p class="cards-item-type">Апартаменты</p>
+              <p class="cards-item-cost">От 2000 Р.</p>
+              <a class="button button-primary cards-button" href="#!">Подробнее</a>
+              <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+              <p class="cards-star-rating star-rating-2"><span class="visually-hidden">Две звезды</span></p>
+              <p class="cards-guest-rating">Рейтинг: 9,2</p>
             </li>
           </ul>
         </section>

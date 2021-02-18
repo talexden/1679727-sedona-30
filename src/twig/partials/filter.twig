@@ -1,45 +1,45 @@
 <header class="filter">
     <h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
     <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
-      <fieldset class="filter-form-fieldset form-fieldset-infrastructure">
-        <legend class="filter-form-fieldset-legend">Инфраструктура:</legend>
+      <fieldset class="filter-fieldset filter-fieldset-primary">
+        <legend class="filter-fieldset-legend">Инфраструктура:</legend>
         <ul class="form-list">
-          <li class="form-items">
-            <label class="checkbox-label-basin"><input  class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
+          <li class="filter-items">
+            <label class="checkbox-label"><input  class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
           </li>
-          <li class="form-items">
-            <label class="checkbox-label-parking"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
+          <li class="filter-items">
+            <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
           </li>
-          <li class="form-items">
-            <label class="checkbox-label-wi-fi"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
+          <li class="filter-items">
+            <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
           </li>
         </ul>
       </fieldset>
-      <fieldset class="filter-form-fieldset form-fieldset-type">
-        <legend class="filter-form-fieldset-legend">Тип жилья:</legend>
-        <ul class="form-list">
-          <li class="form-items">
-            <label class="checkbox-label-hotel"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
+      <fieldset class="filter-fieldset filter-fieldset-secondary">
+        <legend class="filter-fieldset-legend">Тип жилья:</legend>
+        <ul class="filter-list">
+          <li class="filter-items">
+            <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
           </li>
-          <li class="form-items">
-            <label class="checkbox-label-motel"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
+          <li class="filter-items">
+            <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
           </li>
-          <li class="form-items">
-            <label class="checkbox-label-apartments"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
+          <li class="filter-items">
+            <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
           </li>
         </ul>
       </fieldset>
-      <fieldset class="filter-form-fieldset form-fieldset-cost">
-        <legend class="filter-form-fieldset-legend">Стоимость в сутки (Р):</legend>
-        <div class="filter-form-input-text-group">
-          <input class="filter-form-input-text input-text-low" type="text" placeholder="От 0">
-          <input class="filter-form-input-text input-text-high" type="text" placeholder="До 3000">
+      <fieldset class="filter-fieldset form-fieldset-tertiary">
+        <legend class="filter-fieldset-legend">Стоимость в сутки (Р):</legend>
+        <div class="filter-input-text-group">
+          <input class="filter-input-text" type="text" placeholder="От 0">
+          <input class="filter-input-text" type="text" placeholder="До 3000">
         </div>
-        <div class="filter-form-input-range-group">
-          <input class="range filter-form-input-range-lower" id="filter-form-input-range-lower" type="range" min="0" max="3000" value="0">
-          <input class="range filter-form-input-range-higher" id="filter-form-input-range-higher" type="range" min="0" max="3000" value="3000">
+        <div class="filter-input-range-group">
+          <input class="range filter-input-range-lower" id="filter-input-range-lower" type="range" min="0" max="3000" value="0">
+          <input class="range filter-input-range-higher" id="filter-input-range-higher" type="range" min="0" max="3000" value="3000">
         </div>
-        <button class="button filter-form-submit-button" type="submit">Показать</button>
+        <button class="button filter-submit-button" type="submit">Показать</button>
       </fieldset>
     </form>
   </header>

@@ -2,7 +2,7 @@
   "private": "true",
   "scripts": {
     "test": "gulp test --silent",
-    "start": "gulp --silent",
+    "start": "gulp",
     "build": "npm test && gulp build"
   },
   "husky": {
