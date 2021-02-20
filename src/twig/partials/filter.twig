@@ -1,44 +1,41 @@
 <header class="filter">
     <h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
     <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
-      <fieldset class="filter-fieldset filter-fieldset-primary">
+      <fieldset class="filter-fieldset">
         <legend class="filter-fieldset-legend">Инфраструктура:</legend>
-        <ul class="form-list">
-          <li class="filter-items">
+        <ul class="filter-list">
+          <li class="filter-item">
             <label class="checkbox-label"><input  class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
           </li>
-          <li class="filter-items">
+          <li class="filter-item">
             <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
           </li>
-          <li class="filter-items">
+          <li class="filter-item">
             <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
           </li>
         </ul>
       </fieldset>
-      <fieldset class="filter-fieldset filter-fieldset-secondary">
+      <fieldset class="filter-fieldset">
         <legend class="filter-fieldset-legend">Тип жилья:</legend>
         <ul class="filter-list">
-          <li class="filter-items">
+          <li class="filter-item">
             <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
           </li>
-          <li class="filter-items">
+          <li class="filter-item">
             <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
           </li>
-          <li class="filter-items">
+          <li class="filter-item">
             <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
           </li>
         </ul>
       </fieldset>
-      <fieldset class="filter-fieldset form-fieldset-tertiary">
-        <legend class="filter-fieldset-legend">Стоимость в сутки (Р):</legend>
-        <div class="filter-input-text-group">
-          <input class="filter-input-text" type="text" placeholder="От 0">
-          <input class="filter-input-text" type="text" placeholder="До 3000">
+      <fieldset class="filter-fieldset">
+        <legend class="filter-fieldset-legend">Стоимость в сутки (р):</legend>
+        <div class="filter-input-number-group">
+          <label>От <input class="filter-input-number" type="number"></label>
+          <label>До <input class="filter-input-number" type="number"></label>
         </div>
-        <div class="filter-input-range-group">
-          <input class="range filter-input-range-lower" id="filter-input-range-lower" type="range" min="0" max="3000" value="0">
-          <input class="range filter-input-range-higher" id="filter-input-range-higher" type="range" min="0" max="3000" value="3000">
-        </div>
+        <input class="range filter-input-range-" type="range" min="0" max="3000" value="3000">
         <button class="button filter-submit-button" type="submit">Показать</button>
       </fieldset>
     </form>

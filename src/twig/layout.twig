@@ -1,7 +1,7 @@
 {% from 'macro.twig' import symbol %}
 
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: {{ title }}</title>
@@ -13,7 +13,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="wrapper container">
+    <div class="page-body">
       {% include 'partials/header.twig' %}
       <main>
         {% block pageMain %}

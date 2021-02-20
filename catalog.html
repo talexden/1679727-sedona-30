@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона: Гостиницы</title>
@@ -11,12 +11,12 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="wrapper container">
+    <div class="page-body">
       <header class="header">
+        <a class="logo" href="index.html">
+          <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
+        </a>
         <nav class="nav">
-          <a class="logo" href="index.html">
-            <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
-          </a>
           <ul class="nav-list">
             <li class="nav-list-item"><a href="blank.html">Информация</a></li>
             <li class="nav-list-item"><a href="blank.html">Фото и видео</a></li>
@@ -29,49 +29,46 @@
         <header class="filter">
           <h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
           <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
-            <fieldset class="filter-fieldset filter-fieldset-primary">
+            <fieldset class="filter-fieldset">
               <legend class="filter-fieldset-legend">Инфраструктура:</legend>
-              <ul class="form-list">
-                <li class="filter-items">
+              <ul class="filter-list">
+                <li class="filter-item">
                   <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
                 </li>
-                <li class="filter-items">
+                <li class="filter-item">
                   <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
                 </li>
-                <li class="filter-items">
+                <li class="filter-item">
                   <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-fieldset filter-fieldset-secondary">
+            <fieldset class="filter-fieldset">
               <legend class="filter-fieldset-legend">Тип жилья:</legend>
               <ul class="filter-list">
-                <li class="filter-items">
+                <li class="filter-item">
                   <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
                 </li>
-                <li class="filter-items">
+                <li class="filter-item">
                   <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
                 </li>
-                <li class="filter-items">
+                <li class="filter-item">
                   <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-fieldset form-fieldset-tertiary">
-              <legend class="filter-fieldset-legend">Стоимость в сутки (Р):</legend>
-              <div class="filter-input-text-group">
-                <input class="filter-input-text" type="text" placeholder="От 0">
-                <input class="filter-input-text" type="text" placeholder="До 3000">
+            <fieldset class="filter-fieldset">
+              <legend class="filter-fieldset-legend">Стоимость в сутки (р):</legend>
+              <div class="filter-input-number-group">
+                <label>От <input class="filter-input-number" type="number"></label>
+                <label>До <input class="filter-input-number" type="number"></label>
               </div>
-              <div class="filter-input-range-group">
-                <input class="range filter-input-range-lower" id="filter-input-range-lower" type="range" min="0" max="3000" value="0">
-                <input class="range filter-input-range-higher" id="filter-input-range-higher" type="range" min="0" max="3000" value="3000">
-              </div>
+              <input class="range filter-input-range-" type="range" min="0" max="3000" value="3000">
               <button class="button filter-submit-button" type="submit">Показать</button>
             </fieldset>
           </form>
         </header>
-        <section class="sorting-section">
+        <section class="hotels-catalog">
           <h2 class="visually-hidden">Результаты поиска</h2>
           <p class="sorting-lead">Найдено: 3</p>
           <header class="sorting">
@@ -111,30 +108,30 @@
               <h4 class="cards-item-title">Amara Resort &amp; Spa</h4>
               <img class="cards-item-image" src="img/amara-resort-spa.jpg" alt="Гостиница Amara Resorting, вид снаружи" width="135" height="90">
               <p class="cards-item-type">Гостиница</p>
-              <p class="cards-item-cost">От 4000 Р.</p>
+              <p class="cards-item-cost">От 4000 р.</p>
               <a class="button button-primary cards-button" href="#!">Подробнее</a>
               <a class="button button-secondary cards-button" href="#!">Забронировать</a>
-              <p class="cards-star-rating star-rating-4"><span class="visually-hidden">Четыре звезды</span></p>
+              <p class="cards-star-rating cards-star-rating-4"><span class="visually-hidden">Четыре звезды</span></p>
               <p class="cards-guest-rating">Рейтинг: 8,5</p>
             </li>
             <li class="cards-item">
               <h4 class="cards-item-title">Desert Quail Inn</h4>
               <img class="cards-item-image" src="img/desert-quail-inn.jpg" alt="Гостиница Desert Quail Inn, вид снаружи" width="135" height="90">
               <p class="cards-item-type">Мотель</p>
-              <p class="cards-item-cost">От 3000 Р.</p>
+              <p class="cards-item-cost">От 3000 р.</p>
               <a class="button button-primary cards-button" href="#!">Подробнее</a>
               <a class="button button-secondary cards-button" href="#!">Забронировать</a>
-              <p class="cards-star-rating star-rating-3"><span class="visually-hidden">Три звезды</span></p>
+              <p class="cards-star-rating cards-star-rating-3"><span class="visually-hidden">Три звезды</span></p>
               <p class="cards-guest-rating">Рейтинг: 8,9</p>
             </li>
             <li class="cards-item">
               <h4 class="cards-item-title">Villas at Poco Diablo</h4>
               <img class="cards-item-image" src="img/villas-at-poco-diablo.jpg" alt="Гостиница Villas at Poco Diablo, вид снаружи" width="135" height="90">
               <p class="cards-item-type">Апартаменты</p>
-              <p class="cards-item-cost">От 2000 Р.</p>
+              <p class="cards-item-cost">От 2000 р.</p>
               <a class="button button-primary cards-button" href="#!">Подробнее</a>
               <a class="button button-secondary cards-button" href="#!">Забронировать</a>
-              <p class="cards-star-rating star-rating-2"><span class="visually-hidden">Две звезды</span></p>
+              <p class="cards-star-rating cards-star-rating-2"><span class="visually-hidden">Две звезды</span></p>
               <p class="cards-guest-rating">Рейтинг: 9,2</p>
             </li>
           </ul>
@@ -178,13 +175,12 @@
         </section>
         <section class="footer-copyright">
           <h2 class="visually-hidden">Копирайт </h2>
-          <p class="footer-copyright-text">Website by
-            <a class="footer-copyright-link" href="https://htmlacademy.ru/intensive/htmlcss">
-              <svg class="symbol footer-copyright-icon" width="115" height="41" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="img/icons/sprite.svg#logo-htmlacademy" />
-              </svg>
-            </a>
-          </p>
+          <p class="footer-copyright-text">Website</p>
+          <a class="footer-copyright-link" href="https://htmlacademy.ru/intensive/htmlcss">
+            <svg class="symbol footer-copyright-icon" width="115" height="41" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/icons/sprite.svg#logo-htmlacademy" />
+            </svg>
+          </a>
         </section>
       </footer>
     </div>

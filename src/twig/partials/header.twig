@@ -1,12 +1,12 @@
 <header class="header">
+{% if page == 'index' %}
+  <a class="logo">
+{% else %}
+  <a class="logo" href="index.html">
+{% endif %}
+    <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
+  </a>
   <nav class="nav">
-  {% if page == 'index' %}
-    <a class="logo">
-  {% else %}
-    <a class="logo" href="index.html">
-  {% endif %}
-      <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
-    </a>
     <ul class="nav-list">
       <li class="nav-list-item"><a href="blank.html">Информация</a></li>
       <li class="nav-list-item"><a href="blank.html">Фото и видео</a></li>

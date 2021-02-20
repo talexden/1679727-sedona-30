@@ -1,5 +1,6 @@
 .filter {
-  background-color: var(--background-image-color);
+  padding: 27px 72px 31px;
+  background-color: var(--background-midy-gray);
   background-image: url("../img/background-catalog.jpg");
   background-repeat: no-repeat;
 }
@@ -10,8 +11,10 @@
   background: none;
 }
 
-
 .filter-fieldset {
+  width: 256px;
+  margin: 0;
+  padding: 0;
   border: none;
 }
 
@@ -21,22 +24,23 @@
 }
 
 .filter-list {
+  padding: 0;
   list-style: none;
 }
 
-.filter-input-text-group {
-  display: flex;
+.filter-input-number-group {
+  padding: 7px;
   border: 2px solid var(--color-white);
 }
 
-.filter-input-text-group::after {
+.filter-input-number-group::after {
   content: "";
   width: 2px;
   height: 22px;
   background-color: var(--color-white);
 }
 
-.filter-input-text {
+.filter-input-number {
   color: inherit;
   background: none;
   border: none;

@@ -1,5 +1,10 @@
 /* search */
 
+.search-header {
+  padding: 58px 316px 0;
+  text-align: center;
+}
+
 .search-header-lead {
   font-weight: 700;
   font-size: 30px;
@@ -15,15 +20,31 @@
   padding: 30px 0;
   font-size: 21px;
   line-height: 26px;
+  text-align: center;
 }
 
 /* search form */
+.search-form-wrapper {
+  height: 473px;
+  background: none;
+}
+
+.search-image {
+  position: absolute;
+  z-index: -1;
+  transform: translate(1px, 0);
+}
 
 .search-form {
+  position: absolute;
+  left: 50%;
   box-sizing: border-box;
   width: 568px;
   min-height: 395px;
   padding: 55px;
+  background-color: var(--color-white);
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+  transform: translate(-50%, 0);
 }
 
 .search-form-group {
