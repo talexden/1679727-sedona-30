@@ -25,26 +25,25 @@
 
 /* search form */
 .search-form-wrapper {
-  height: 473px;
-  background: none;
+  position: relative;
+  padding: 0 316px 198px;
+  overflow: hidden;
+}
+
+.search-form {
+  padding: 55px;
+  background-color: var(--background-white);
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
 
 .search-image {
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: -1;
-  transform: translate(1px, 0);
-}
-
-.search-form {
-  position: absolute;
-  left: 50%;
-  box-sizing: border-box;
-  width: 568px;
-  min-height: 395px;
-  padding: 55px;
-  background-color: var(--color-white);
-  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
-  transform: translate(-50%, 0);
+  object-fit: cover;
 }
 
 .search-form-group {

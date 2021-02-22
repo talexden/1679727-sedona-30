@@ -5,9 +5,19 @@
 .page-body {
   display: grid;
   align-content: start;
+  grid-template-columns: 1fr;
   grid-template-rows: min-content 1fr min-content;
   width: 1200px;
   min-height: 100%;
   margin: 0 auto;
   box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+}
+
+// не понимаю куда это засунуть, наверно это все глобал, вместе с пейжес
+
+.main-prymary {
+  grid-column-end: -1;
+  grid-column-start: 1;
+  grid-row-end: -1;
+  grid-row-start: 2;
 }
