@@ -12,6 +12,7 @@ const postcss = require('gulp-postcss');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
+const del = require('del');
 
 const SVGO_PLUGINS_CONFIG = {
 	floatPrecision: 2
@@ -39,9 +40,11 @@ const htmlTest = () => src('*.html')
 	.pipe(htmlValidator.reporter());
 
 const htmlBuild = () => src('src/twig/pages/**/*.twig')
-	.pipe(data((file) => {
+	.pipe(data(async (file) => {
+    const page = file.path.replace(/\\/g, '/').replace(/^.*?twig\/pages\/(.*)\.twig$/, '$1');
+    await del(`${page}.html`);
 		return {
-			page: file.path.replace(/\\/g, '/').replace(/^.*?twig\/pages\/(.*)\.twig$/, '$1')
+			page
 		};
 	}))
 	.pipe(twig())
