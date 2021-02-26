@@ -13,10 +13,10 @@
   <body>
     <div class="page-body">
       <header class="header">
-        <a class="logo">
-          <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
-        </a>
         <nav class="nav">
+          <a class="logo">
+            <img src="img/sedona-logo.svg" alt="Логотип - город Седона" width="138" height="70">
+          </a>
           <ul class="nav-list">
             <li class="nav-list-item"><a href="blank.html">Информация</a></li>
             <li class="nav-list-item"><a href="blank.html">Фото и видео</a></li>
@@ -45,15 +45,15 @@
               </div>
               <img class="reasons-image" src="img/promo-image-1.jpg" alt="Улица Седоны" width="800" height="256">
               <ul class="reasons-features-list">
-                <li class="reasons-features-item">
+                <li class="reasons-features-item features-motel">
                   <h4 class="reasons-features-item-title">Жильё</h4>
                   <p class="color-text-primary">Рекомендуем пожить в настоящем<br>мотеле, всё как в кино!</p><br>
                 </li>
-                <li class="reasons-features-item">
+                <li class="reasons-features-item features-food">
                   <h4 class="reasons-features-item-title">Еда</h4>
                   <p class="color-text-primary">Всегда заказывайте фирменный бургер,<br>вы не разочаруетесь!</p>
                 </li>
-                <li class="reasons-features-item">
+                <li class="reasons-features-item  features-souvenirs">
                   <h4 class="reasons-features-item-title">Сувениры</h4>
                   <p class="color-text-primary">Не только китайского, но и местного<br>производства!</p>
                 </li>
@@ -92,6 +92,7 @@
             <button class="button button-secondary search-button" type="button">Поиск гостиницы в Седоне</button>
           </header>
           <div class="search-form-wrapper">
+            <img class="search-image" src="img/map.jpg" alt="Гостиницы на карте" width="1199" height="593">
             <form class="search-form" action="htmlacademy.ru" method="get">
               <p class="search-form-group">
                 <label class="search-form-label" for="check-in-date">Дата заезда:</label>
@@ -141,7 +142,6 @@
               </p>
               <button class="button button-primary search-form-submit-button" type="submit">Найти</button>
             </form>
-            <img class="search-image" src="img/map.jpg" alt="Гостиницы на карте" width="1199" height="593">
           </div>
         </section>
       </main>
@@ -183,12 +183,13 @@
         </section>
         <section class="footer-copyright">
           <h2 class="visually-hidden">Копирайт </h2>
-          <p class="footer-copyright-text">Website</p>
-          <a class="footer-copyright-link" href="https://htmlacademy.ru/intensive/htmlcss">
-            <svg class="symbol footer-copyright-icon" width="115" height="41" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="img/icons/sprite.svg#logo-htmlacademy" />
-            </svg>
-          </a>
+          <p class="footer-copyright-text">Website by
+            <a class="footer-copyright-link" href="https://htmlacademy.ru/intensive/htmlcss">
+              <svg class="symbol footer-copyright-icon" width="115" height="41" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/icons/sprite.svg#logo-htmlacademy" />
+              </svg>
+            </a>
+          </p>
         </section>
       </footer>
     </div>

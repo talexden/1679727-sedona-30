@@ -9,8 +9,7 @@
 }
 
 .reasons-header-lead {
-  margin: 0;
-  margin-bottom: 17px;
+  margin-bottom: 0 0 17px;
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
@@ -51,7 +50,7 @@
 
 .reasons-item-title {
   font-weight: 700;
-  font-size: 21px;                // ~"/"
+  font-size: 21px;
 }
 
 .reasons-features-list {
@@ -71,4 +70,36 @@
 
 .reasons-item-box {
   background-color: var(--background-gray);
+}
+
+.reasons-features-item::before {
+  content: "";
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  margin: 0 auto;
+  color: var(--color-blue);
+  background-repeat: no-repeat;
+}
+
+
+.features-motel::before {
+  width: 75px;
+  height: 72px;
+  background-image: url("../img/icons/motel.svg");
+}
+
+.features-food::before {
+  width: 75px;
+  height: 70px;
+  background-image: url("../img/icons/food.svg");
+}
+
+.features-souvenirs::before {
+  width: 65px;
+  height: 77px;
+  background-image: url("../img/icons/souvenirs.svg");
 }
