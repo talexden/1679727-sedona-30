@@ -1,6 +1,5 @@
 .page {
   height: 100%;
-  background-color: var(--background-light-gray);
 }
 
 .page-body {
@@ -17,9 +16,7 @@
 
 // не понимаю куда это засунуть, наверно это все глобал, вместе с пейжес
 
-.main-prymary {
-  grid-column-end: -1;
-  grid-column-start: 1;
-  grid-row-end: -1;
-  grid-row-start: 2;
+.main-primary {
+  grid-column: 1 ~"/" -1;
+  grid-row: 2 ~"/" -1;
 }
