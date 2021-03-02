@@ -11,9 +11,11 @@ const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('autoprefixer');
+const gulpIf = require('gulp-if');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 
+const {OFFLINE} = process.env;
 const SVGO_PLUGINS_CONFIG = {
 	floatPrecision: 2
 };
@@ -36,8 +38,8 @@ const htmlTest = () => src('*.html')
   .pipe(lintspaces.reporter())
 	.pipe(htmlhint('.htmlhintrc'))
 	.pipe(htmlhint.reporter())
-	.pipe(htmlValidator())
-	.pipe(htmlValidator.reporter());
+  .pipe(gulpIf(!OFFLINE, htmlValidator()))
+  .pipe(gulpIf(!OFFLINE, htmlValidator.reporter()));
 
 const htmlBuild = () => src('src/twig/pages/**/*.twig')
 	.pipe(data(async (file) => {

@@ -29,15 +29,22 @@
 }
 
 .filter-input-number-group {
+  position: relative;
+  display: flex;
   padding: 7px;
-  border: 2px solid var(--color-white);
+  border: 2px solid;
 }
 
 .filter-input-number-group::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
   width: 2px;
   height: 22px;
   background-color: var(--color-white);
+  transform: translate(-50%, -50%);
 }
 
 .filter-input-number {
@@ -53,5 +60,5 @@
 .filter button {
   padding: 7px 35px 8px 36px;
   background: none;
-  border: 2px solid var(--color-white);
+  border: 2px solid;
 }

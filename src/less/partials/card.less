@@ -1,0 +1,56 @@
+.cards-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-item {
+  display: grid;
+  grid-template-columns: 135px 1fr 110px;
+  gap: 29px;
+  padding: 23px 73px;
+  border-top: 1px solid var(--color-midy-gray);
+}
+
+.cards-item:last-child {
+  border-bottom: 1px solid var(--color-midy-gray);
+}
+
+.card-image {
+  grid-column: 1 ~"/" 2;
+  padding: 30px 0;
+}
+
+.cards-item-image {
+  display: block;
+}
+
+.cards-item-info {
+  grid-column: 2 ~"/" 3;
+}
+
+.cards-rating {
+  grid-column: -1 ~"/" -2;
+}
+
+.cards-item-title {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.cards-button {
+  padding: 3px 16px;
+}
+
+.cards-star-rating-4 {   // тест звезд в "ручном" режиме и с "кривыми" звездами
+  width: 91px;
+  height: 19px;
+  background-image: url("../img/icons/star.svg");
+  background-repeat: space;
+  background-size: 19px auto;
+}
+
+.cards-guest-rating {
+  padding: 3px 12px;
+  background-color: var(--background-light-gray);
+}
