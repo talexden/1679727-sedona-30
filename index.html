@@ -11,6 +11,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
+    <script src="js/pixelperfect.js"></script>
     <div class="page-body">
       <header class="header">
         <nav class="nav">
@@ -39,15 +40,15 @@
           <ol class="reasons-list">
             <li class="reasons-item reasons-item-lead">
               <div class="reasons-item-box-blue">
-                <h3 class="reasons-item-title">Настоящий городок</h3>
+                <h3 class="reasons-item-title">Настоящий<br>городок</h3>
                 <p class="reasons-item-number">— №1 —</p>
-                <p class="reasons-item-text">Седона - не аттракцион для туристов, там течёт своя жизнь</p>
+                <p class="reasons-item-text">Седона - не аттракцион для туристов, там<br>течёт своя жизнь</p>
               </div>
               <img class="reasons-image" src="img/promo-image-1.jpg" alt="Улица Седоны" width="800" height="256">
               <ul class="reasons-features-list">
                 <li class="reasons-features-item features-motel">
                   <h4 class="reasons-features-item-title">Жильё</h4>
-                  <p class="color-text-primary">Рекомендуем пожить в настоящем<br>мотеле, всё как в кино!</p><br>
+                  <p class="color-text-primary">Рекомендуем пожить в настоящем<br>мотеле, всё как в кино!</p>
                 </li>
                 <li class="reasons-features-item features-food">
                   <h4 class="reasons-features-item-title">Еда</h4>
@@ -68,19 +69,19 @@
               <img class="reasons-image" src="img/promo-image-2.jpg" alt="Мост Дьявола" width="800" height="256">
             </li>
             <li class="reasons-item reasons-item-box">
-              <h3 class="reasons-item-title">Небольшая площадь</h3>
+              <h3 class="reasons-item-title">Небольшая<br>площадь</h3>
               <p class="reasons-item-number color-text-primary">— №3 —</p>
-              <p class="reasons-item-text color-text-primary">Все достопримечательности находятся очень близко</p>
+              <p class="reasons-item-text color-text-primary">Все достопримечательности<br>находятся очень близко</p>
             </li>
             <li class="reasons-item reasons-item-box">
-              <h3 class="reasons-item-title">красивая дорога</h3>
+              <h3 class="reasons-item-title">Красивая<br>дорога</h3>
               <p class="reasons-item-number color-text-primary">— №4 —</p>
-              <p class="reasons-item-text color-text-primary">Ехать в седону из лас-вегаса совсем не скучно!</p>
+              <p class="reasons-item-text color-text-primary">Ехать в седону из лас-вегаса совсем<br>не скучно!</p>
             </li>
             <li class="reasons-item reasons-item-box">
-              <h3 class="reasons-item-title">Мало туристов</h3>
+              <h3 class="reasons-item-title">Мало<br>туристов</h3>
               <p class="reasons-item-number color-text-primary">— №5 —</p>
-              <p class="reasons-item-text color-text-primary">Большинство едет в гранд каньон и толпится там</p>
+              <p class="reasons-item-text color-text-primary">Большинство едет в гранд каньон<br>и толпится там</p>
             </li>
           </ol>
         </section>
@@ -104,7 +105,7 @@
                 </button>
               </p>
               <p class="search-form-group">
-                <label class="search-form-label" for="check-out-date">Дата заезда:</label>
+                <label class="search-form-label" for="check-out-date">Дата выезда:</label>
                 <input class="search-form-input search-form-date" id="check-out-date" type="text" placeholder="4 июля 2017">
                 <button class="search-form-button" type="button">
                   <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
@@ -112,34 +113,36 @@
                   </svg>
                 </button>
               </p>
-              <p class="search-form-group">
-                <label class="search-form-label" for="adults">Взрослые:</label>
-                <button class="search-form-button" type="button">
-                  <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/icons/sprite.svg#decrease" />
-                  </svg>
-                </button>
-                <input class="search-form-input search-form-number" id="adults" type="number" value="2">
-                <button class="search-form-button" type="button">
-                  <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/icons/sprite.svg#increase" />
-                  </svg>
-                </button>
-              </p>
-              <p class="search-form-group">
-                <label class="search-form-label" for="children">Дети:</label>
-                <button class="search-form-button" type="button">
-                  <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/icons/sprite.svg#decrease" />
-                  </svg>
-                </button>
-                <input class="search-form-input search-form-number" id="children" type="number" value="0">
-                <button class="search-form-button" type="button">
-                  <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="img/icons/sprite.svg#increase" />
-                  </svg>
-                </button>
-              </p>
+              <div class="search-form-group">
+                <p class="search-form-subgroup">
+                  <label class="search-form-label" for="adults">Взрослые:</label>
+                  <button class="search-form-button" type="button">
+                    <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/icons/sprite.svg#decrease" />
+                    </svg>
+                  </button>
+                  <input class="search-form-input search-form-number" id="adults" type="number" value="2">
+                  <button class="search-form-button" type="button">
+                    <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/icons/sprite.svg#increase" />
+                    </svg>
+                  </button>
+                </p>
+                <p class="search-form-subgroup">
+                  <label class="search-form-label" for="children">Дети:</label>
+                  <button class="search-form-button" type="button">
+                    <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/icons/sprite.svg#decrease" />
+                    </svg>
+                  </button>
+                  <input class="search-form-input search-form-number" id="children" type="number" value="0">
+                  <button class="search-form-button" type="button">
+                    <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="img/icons/sprite.svg#increase" />
+                    </svg>
+                  </button>
+                </p>
+              </div>
               <button class="button button-primary search-form-submit-button" type="submit">Найти</button>
             </form>
           </div>
@@ -149,7 +152,6 @@
         <section class="footer-contacts">
           <h2 class="visually-hidden">Как нас найти</h2>
           <a class="footer-contacts-link" href="#!">#VISITSEDONA</a>
-          <br>
           <a class="footer-contacts-link" href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
         </section>
         <section class="footer-social">

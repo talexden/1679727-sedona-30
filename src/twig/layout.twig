@@ -13,6 +13,9 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
+    {% block pixelperfect %}
+      <script src="js/pixelperfect.js"></script>
+    {% endblock %}
     <div class="page-body">
       {% include 'partials/header.twig' %}
     {% if page == 'index' %}
