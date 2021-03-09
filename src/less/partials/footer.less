@@ -3,33 +3,29 @@
 .footer {
   position: relative;
   display: grid;
+  justify-items: center;
   align-items: center;
   grid-column: 1 ~"/" -1;
   grid-row: -2 ~"/" -1;
-  grid-template-columns: 400px 400px 400px;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-sizing: border-box;
+  min-height: 120px;
+  gap: 35px;
+  padding: 23px 72px 23px;
   line-height: 26px;
   background-color: var(--background-opacity-white);
 }
 
 .footer-contacts {
-  padding: 23px 10px 36px 82px;
   text-align: center;
 }
 
 .footer-contacts-link {
   display: block;
-  margin-bottom: 9px;
+  margin: 0 auto 9px;
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
-}
-
-.footer-contacts-link:last-child {
-  margin: 0;
-}
-
-.footer-social {
-  padding: 30px 10px;
 }
 
 .footer-social-list {
@@ -55,7 +51,6 @@
 
 .footer-copyright {
   display: flex;
-  padding: 10px 82px 10px 10px;
 }
 
 .footer-copyright-text {

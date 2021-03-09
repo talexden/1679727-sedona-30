@@ -12,18 +12,27 @@
 }
 
 .filter-fieldset {
-  width: 256px;
+  display: flex;
+  flex-direction: column;
+  width: 254px;
   margin: 0;
   padding: 0;
   border: none;
 }
 
+.filter-fieldset:last-of-type {
+  width: 317px;
+  margin-left: auto;
+}
+
 .filter-fieldset-legend {
+  margin-bottom: 11px;
   font-weight: 700;
   font-size: 16px;
 }
 
 .filter-list {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -31,7 +40,9 @@
 .filter-input-number-group {
   position: relative;
   display: flex;
-  padding: 7px;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  padding: 6px;
   border: 2px solid;
 }
 
@@ -44,21 +55,30 @@
   width: 2px;
   height: 22px;
   background-color: var(--color-white);
-  transform: translate(-50%, -50%);
+  transform: translate(0, -50%);
+}
+
+.filter-input-label {
+  display: flex;
+  align-items: center;
 }
 
 .filter-input-number {
+  max-width: 70px;  // я так понимаю этот параметр должен высчитывать js
+  margin-left: 5px;
   color: inherit;
   background: none;
   border: none;
 }
 
-.input-text-high {
-  order: 3;
+.filter-input-range {
+  margin-bottom: 25px;
 }
 
-.filter button {
-  padding: 7px 35px 8px 36px;
+.filter-submit-button {
+  margin-right: 96px; // пробовал align-self: ;
+  margin-left: auto;
+  padding: 7px 33px 9px 34px;
   background: none;
   border: 2px solid;
 }

@@ -1,34 +1,36 @@
   <section class="hotels-catalog">
-    <h2 class="visually-hidden">Результаты поиска</h2>
-    <p class="sorting-lead">Найдено: 3</p>
-    <header class="sorting">
-      <h3 class="sorting-title">Сортировка:</h3>
-      <ul class="sorting-list-primary">
-        <li>
-          <a class="sorting-primary sorting-primary-current">По цене</a>
-        </li>
-        <li>
-          <a class="sorting-primary" href="#!">По рейтингу</a>
-        </li>
-        <li>
-          <a class="sorting-primary" href="#!">По типу</a>
-        </li>
-      </ul>
-      <ul class="sorting-list-secondary">
-        <li>
-          <a class="sorting-secondary" href="#!">
-            <span class="visually-hidden">Сортировка по возрастанию</span>
-            {{ symbol('lower-first', 11, 10, 'sorting-item-lower-first-icon') }}
-          </a>
-        </li>
-        <li>
-          <a class="sorting-secondary sorting-secondary-current">
-            <span class="visually-hidden">Сортировка по убыванию</span>
-            {{ symbol('higher-first', 11, 10, 'sorting-item-higher-first-icon') }}
-          </a>
-        </li>
-      </ul>
-    </header>
+    <div class="sorting-block">
+      <h2 class="visually-hidden">Результаты поиска</h2>
+      <p class="sorting-lead">Найдено: 3</p>
+      <header class="sorting">
+        <h3 class="sorting-title">Сортировка:</h3>
+        <ul class="sorting-list sorting-list-primary">
+          <li class="sorting-list-item">
+            <a class="sorting-primary sorting-primary-current">По цене</a>
+          </li>
+          <li class="sorting-list-item">
+            <a class="sorting-primary" href="#!">По типу</a>
+          </li>
+          <li class="sorting-list-item">
+            <a class="sorting-primary" href="#!">По рейтингу</a>
+          </li>
+        </ul>
+        <ul class="sorting-list sorting-list-secondary">
+          <li>
+            <a class="sorting-secondary" href="#!">
+              <span class="visually-hidden">Сортировка по возрастанию</span>
+              {{ symbol('lower-first', 11, 10, 'sorting-item-lower-first-icon') }}
+            </a>
+          </li>
+          <li>
+            <a class="sorting-secondary sorting-secondary-current">
+              <span class="visually-hidden">Сортировка по убыванию</span>
+              {{ symbol('higher-first', 11, 10, 'sorting-item-higher-first-icon') }}
+            </a>
+          </li>
+        </ul>
+      </header>
+    </div>
     <ul class="cards-list">
       <li class="cards-item">
         <div>
@@ -36,10 +38,14 @@
         </div>
         <div>
           <h4 class="cards-item-title">Amara Resort &amp; Spa</h4>
-          <p class="cards-item-type">Гостиница</p>
-          <p class="cards-item-cost">От 4000 р.</p>
-          <a class="button button-primary cards-button" href="#!">Подробнее</a>
-          <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+          <div class="cards-item-info">
+            <p class="cards-item-column-1">Гостиница</p>
+            <p class="cards-item-column-2">От 4000 р.</p>
+          </div>
+          <div class="cards-item-buttons">
+            <a class="cards-item-column-1 button button-primary cards-button" href="#!">Подробнее</a>
+            <a class="cards-item-column-2 button button-secondary cards-button" href="#!">Забронировать</a>
+          </div>
         </div>
         <div>
           <p class="cards-star-rating cards-star-rating-4"><span class="visually-hidden">Четыре звезды</span></p>
@@ -52,10 +58,14 @@
         </div>
         <div>
           <h4 class="cards-item-title">Desert Quail Inn</h4>
-          <p class="cards-item-type">Мотель</p>
-          <p class="cards-item-cost">От 3000 р.</p>
-          <a class="button button-primary cards-button" href="#!">Подробнее</a>
-          <a class="button button-secondary cards-button" href="#!">Забронировать</a >
+          <div class="cards-item-info">
+            <p class="cards-item-info-1">Мотель</p>
+            <p class="cards-item-info-2">От 3000 р.</p>
+          </div>
+          <div class="cards-item-buttons">
+            <a class="cards-item-column-1 button button-primary cards-button" href="#!">Подробнее</a>
+            <a class="cards-item-column-2 button button-secondary cards-button" href="#!">Забронировать</a>
+          </div>
         </div>
         <div>
           <p class="cards-star-rating cards-star-rating-3"><span class="visually-hidden">Три звезды</span></p>
@@ -68,10 +78,14 @@
         </div>
         <div>
           <h4 class="cards-item-title">Villas at Poco Diablo</h4>
-          <p class="cards-item-type">Апартаменты</p>
-          <p class="cards-item-cost">От 2000 р.</p>
-          <a class="button button-primary cards-button" href="#!">Подробнее</a>
-          <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+          <div class="cards-item-info">
+            <p class="cards-item-info-1">Апартаменты</p>
+            <p class="cards-item-info-2">От 2000 р.</p>
+          </div>
+          <div class="cards-item-buttons">
+            <a class="cards-item-column-1 button button-primary cards-button" href="#!">Подробнее</a>
+            <a class="cards-item-column-2 button button-secondary cards-button" href="#!">Забронировать</a>
+          </div>
         </div>
         <div>
           <p class="cards-star-rating cards-star-rating-2"><span class="visually-hidden">Две звезды</span></p>

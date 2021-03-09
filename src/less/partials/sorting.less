@@ -1,22 +1,46 @@
+.sorting-block {
+  display: flex;
+  padding: 29px 72px 31px;
+}
+
 .sorting {
   display: flex;
+  justify-content: space-between;
+  width: 893px;
 }
 
 .sorting-lead {
+  width: 163px;
+  margin: 0;
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
 }
 
 .sorting-title {
+  width: 115px;
+  margin: 0;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
 }
 
+.sorting-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sorting-list-item {
+  margin-right: 32px;
+}
+
+.sorting-list-item:last-of-type {
+  margin-right: 0;
+}
 
 .sorting-list-primary {
-  list-style: none;
   font-size: 12px;
   line-height: 18px;
 }
@@ -45,10 +69,14 @@
 }
 
 .sorting-list-secondary {
-  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 34px;
+  margin-left: auto;
 }
 
 .sorting-secondary {
+  display: block;
   color: var(--color-mid-gray);
 }
 
