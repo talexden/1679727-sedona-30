@@ -536,23 +536,22 @@ input::-webkit-inner-spin-button {
 }
 .sorting-block {
   display: flex;
+  align-items: center;
   padding: 29px 72px 31px;
 }
 .sorting {
   display: flex;
-  justify-content: space-between;
   width: 893px;
 }
 .sorting-lead {
-  width: 163px;
+  min-width: 163px;
   margin: 0;
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
 }
 .sorting-title {
-  width: 115px;
-  margin: 0;
+  margin: 0 40px 0 0;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -620,8 +619,8 @@ input::-webkit-inner-spin-button {
 .cards-item {
   display: grid;
   grid-template-columns: 135px 1fr 135px;
-  gap: 29px;
-  padding: 23px 73px;
+  gap: 30px;
+  padding: 22px 72px 30px;
   border-top: 1px solid var(--color-midy-gray);
 }
 .cards-item:last-child {
@@ -636,16 +635,12 @@ input::-webkit-inner-spin-button {
   font-size: 21px;
   line-height: 26px;
 }
-.cards-item-info {
+.cards-item-info-group {
   display: flex;
   margin: 0 10px 16px 0;
 }
-.cards-item-column-1 {
+.cards-item-info {
   min-width: 110px;
-  margin: 0 7px 0 0;
-}
-.cards-item-column-2 {
-  min-width: 142px;
   margin: 0 7px 0 0;
 }
 .cards-item-buttons {
@@ -655,17 +650,35 @@ input::-webkit-inner-spin-button {
   display: flex;
   box-sizing: border-box;
   min-height: 27px;
-  padding: 3px 16px;
+  margin-right: 6px;
+  padding: 3px 17px;
+}
+.cards-rating-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cards-star-rating {
+  margin: 6px 0 48px;
 }
 .cards-star-rating-4 {
-  width: 91px;
-  height: 19px;
+  width: 96px;
+  height: 17px;
   background-image: url("../img/icons/star.svg");
-  background-repeat: space;
-  background-size: 19px auto;
+}
+.cards-star-rating-3 {
+  width: 72px;
+  height: 17px;
+  background-image: url("../img/icons/star.svg");
+}
+.cards-star-rating-2 {
+  width: 48px;
+  height: 17px;
+  background-image: url("../img/icons/star.svg");
 }
 .cards-guest-rating {
-  padding: 3px 12px;
+  margin: 0;
+  padding: 3px 14px;
   background-color: var(--background-light-gray);
 }
 /* Прячем невидимые эементы */
@@ -703,12 +716,10 @@ input::-webkit-inner-spin-button {
   bottom: 0;
   left: 0;
   z-index: 10;
-  height: 2762px;
   margin-top: var(--pp-offset);
   background-image: var(--pp-img);
   background-repeat: no-repeat;
   background-position: 50% 0;
-  transform: translate(0, -100%);
   opacity: 0.5;
   filter: invert(1);
   pointer-events: none;

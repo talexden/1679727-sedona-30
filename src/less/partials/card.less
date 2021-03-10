@@ -7,8 +7,8 @@
 .cards-item {
   display: grid;
   grid-template-columns: 135px 1fr 135px;
-  gap: 29px;
-  padding: 23px 73px;
+  gap: 30px;
+  padding: 22px 72px 30px;
   border-top: 1px solid var(--color-midy-gray);
 }
 
@@ -27,18 +27,13 @@
   line-height: 26px;
 }
 
-.cards-item-info {
+.cards-item-info-group {
   display: flex;
   margin: 0 10px 16px 0;
 }
 
-.cards-item-column-1 {
+.cards-item-info {
   min-width: 110px;
-  margin: 0 7px 0 0;
-}
-
-.cards-item-column-2 {
-  min-width: 142px;
   margin: 0 7px 0 0;
 }
 
@@ -50,18 +45,40 @@
   display: flex;
   box-sizing: border-box;
   min-height: 27px;
-  padding: 3px 16px;
+  margin-right: 6px;
+  padding: 3px 17px;
 }
 
-.cards-star-rating-4 {   // тест звезд в "ручном" режиме и с "кривыми" звездами
-  width: 91px;
-  height: 19px;
+.cards-rating-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cards-star-rating {
+  margin: 6px 0 48px;
+}
+
+.cards-star-rating-4 {
+  width: 96px;
+  height: 17px;
   background-image: url("../img/icons/star.svg");
-  background-repeat: space;
-  background-size: 19px auto;
+}
+
+.cards-star-rating-3 {
+  width: 72px;
+  height: 17px;
+  background-image: url("../img/icons/star.svg");
+}
+
+.cards-star-rating-2 {
+  width: 48px;
+  height: 17px;
+  background-image: url("../img/icons/star.svg");
 }
 
 .cards-guest-rating {
-  padding: 3px 12px;
+  margin: 0;
+  padding: 3px 14px;
   background-color: var(--background-light-gray);
 }
