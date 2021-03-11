@@ -6,10 +6,9 @@ if (!ppOffsets[page]) {
   localStorage.setItem(`ppOffsets`, JSON.stringify(ppOffsets));
 }
 
-const ppEl = document.createElement(`div`);
+const ppEl = document.documentElement;
 ppEl.style.setProperty(`--pp-offset`, `${ppOffsets[page]}px`);
 ppEl.style.setProperty(`--pp-img`, `url("../img/pixelperfect/${page}.jpg")`);
-document.body.insertAdjacentElement(`beforeend`, ppEl);
 
 const managePP = (pp) => {
 	if (pp) {

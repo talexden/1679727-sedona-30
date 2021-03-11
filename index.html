@@ -94,35 +94,31 @@
           <div class="search-form-wrapper">
             <img class="search-image" src="img/map.jpg" alt="Гостиницы на карте" width="1199" height="593">
             <form class="search-form" action="htmlacademy.ru" method="get">
+              <p class="search-form-row">
+                <label class="search-form-label">
+                  <span class="search-form-title">Дата заезда:</span>
+                  <input class="search-form-input search-form-date" type="text" placeholder="24 апреля 2017">
+                </label>
+                <button class="search-form-button" type="button">
+                  <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/icons/sprite.svg#calendar" />
+                  </svg>
+                </button>
+              </p>
+              <p class="search-form-row">
+                <label class="search-form-label">
+                  <span class="search-form-title">Дата выезда:</span>
+                  <input class="search-form-input search-form-date" type="text" placeholder="4 июля 2017">
+                </label>
+                <button class="search-form-button" type="button">
+                  <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/icons/sprite.svg#calendar" />
+                  </svg>
+                </button>
+              </p>
               <fieldset class="search-form-row">
                 <p class="search-form-column">
-                  <label>
-                    <span class="search-form-label">Дата заезда:</span>
-                    <input class="search-form-input search-form-date" type="text" placeholder="24 апреля 2017">
-                  </label>
-                  <button class="search-form-button" type="button">
-                    <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="img/icons/sprite.svg#calendar" />
-                    </svg>
-                  </button>
-                </p>
-              </fieldset>
-              <fieldset class="search-form-row">
-                <p class="search-form-column">
-                  <label>
-                    <span class="search-form-label">Дата выезда:</span>
-                    <input class="search-form-input search-form-date" type="text" placeholder="4 июля 2017">
-                  </label>
-                  <button class="search-form-button" type="button">
-                    <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="img/icons/sprite.svg#calendar" />
-                    </svg>
-                  </button>
-                </p>
-              </fieldset>
-              <fieldset class="search-form-row search-form-row-amount">
-                <p class="search-form-column">
-                  <label class="search-form-label" for="adults">Взрослые:</label>
+                  <label class="search-form-label search-form-title" for="adults">Взрослые:</label>
                   <button class="search-form-button" type="button">
                     <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
                       <use xlink:href="img/icons/sprite.svg#decrease" />
@@ -136,7 +132,7 @@
                   </button>
                 </p>
                 <p class="search-form-column search-form-column-second">
-                  <label class="search-form-label" for="children">Дети:</label>
+                  <label class="search-form-label search-form-title" for="children">Дети:</label>
                   <button class="search-form-button" type="button">
                     <svg class="search-form-icons" width="12" height="11" xmlns="http://www.w3.org/2000/svg">
                       <use xlink:href="img/icons/sprite.svg#decrease" />

@@ -29,7 +29,7 @@
   --color-brown: #766357;
 }
 .page {
-  height: 100%;
+  min-height: 100%;
 }
 .page-body {
   display: grid;
@@ -376,14 +376,13 @@ img {
      object-fit: cover;
 }
 .search-form-row {
+  display: flex;
+  align-items: center;
   margin: 0 0 30px;
   padding: 0;
   font-weight: 700;
   line-height: 26px;
   border: none;
-}
-.search-form-row-amount {
-  display: flex;
 }
 .search-form-column {
   display: flex;
@@ -396,11 +395,11 @@ img {
 .search-form-column-second .search-form-label {
   width: 65px;
 }
-.search-form-label {
+.search-form-title {
   width: 112px;
   margin-right: auto;
 }
-.search-form-row label {
+.search-form-label {
   display: flex;
   align-items: center;
 }
@@ -436,7 +435,7 @@ img {
 }
 .search-form-button {
   width: 38px;
-  min-height: 38px;
+  height: 38px;
   padding: 0;
   color: var(--color-dark-gray);
   background-color: var(--background-light-gray);
@@ -455,12 +454,6 @@ img {
   font-size: 21px;
   line-height: 26px;
 }
-/* убираем стрелочки у намберс, как установить и автоматизировать вендорные префиксы? */
-/*
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-} */
 .filter {
   padding: 27px 72px 31px;
   background-color: var(--background-midy-gray);
@@ -541,11 +534,13 @@ input::-webkit-inner-spin-button {
 }
 .sorting {
   display: flex;
-  width: 893px;
+  flex-grow: 1;
+  min-width: 600px;
 }
 .sorting-lead {
-  min-width: 163px;
+  min-width: 133px;
   margin: 0;
+  padding-right: 30px;
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
@@ -558,6 +553,7 @@ input::-webkit-inner-spin-button {
 }
 .sorting-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -565,10 +561,8 @@ input::-webkit-inner-spin-button {
 .sorting-list-item {
   margin-right: 32px;
 }
-.sorting-list-item:last-of-type {
-  margin-right: 0;
-}
 .sorting-list-primary {
+  margin-right: auto;
   font-size: 12px;
   line-height: 18px;
 }
@@ -592,10 +586,14 @@ input::-webkit-inner-spin-button {
   border: none;
 }
 .sorting-list-secondary {
-  justify-content: space-between;
   align-items: center;
-  width: 34px;
-  margin-left: auto;
+  min-width: 34px;
+}
+.sorting-list-secondary-item {
+  margin-right: 12px;
+}
+.sorting-list-secondary-item:last-of-type {
+  margin: 0;
 }
 .sorting-secondary {
   display: block;
@@ -645,6 +643,10 @@ input::-webkit-inner-spin-button {
 }
 .cards-item-buttons {
   display: flex;
+  margin-bottom: 6px;
+}
+.cards-item-buttons:last-child {
+  margin: 0;
 }
 .cards-button {
   display: flex;
@@ -659,22 +661,24 @@ input::-webkit-inner-spin-button {
   align-items: flex-end;
 }
 .cards-star-rating {
-  margin: 6px 0 48px;
-}
-.cards-star-rating-4 {
-  width: 96px;
   height: 17px;
+  margin: 6px 0 auto;
   background-image: url("../img/icons/star.svg");
 }
-.cards-star-rating-3 {
-  width: 72px;
-  height: 17px;
-  background-image: url("../img/icons/star.svg");
+.cards-star-rating-1 {
+  width: 24px;
 }
 .cards-star-rating-2 {
   width: 48px;
-  height: 17px;
-  background-image: url("../img/icons/star.svg");
+}
+.cards-star-rating-3 {
+  width: 72px;
+}
+.cards-star-rating-4 {
+  width: 96px;
+}
+.cards-star-rating-5 {
+  width: 120px;
 }
 .cards-guest-rating {
   margin: 0;

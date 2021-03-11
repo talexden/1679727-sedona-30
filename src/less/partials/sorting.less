@@ -6,12 +6,14 @@
 
 .sorting {
   display: flex;
-  width: 893px;
+  flex-grow: 1;
+  min-width: 600px;
 }
 
 .sorting-lead {
-  min-width: 163px;
+  min-width: 133px;
   margin: 0;
+  padding-right: 30px;
   font-weight: 700;
   font-size: 21px;
   line-height: 26px;
@@ -26,6 +28,7 @@
 
 .sorting-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -35,11 +38,8 @@
   margin-right: 32px;
 }
 
-.sorting-list-item:last-of-type {
-  margin-right: 0;
-}
-
 .sorting-list-primary {
+  margin-right: auto;
   font-size: 12px;
   line-height: 18px;
 }
@@ -68,16 +68,23 @@
 }
 
 .sorting-list-secondary {
-  justify-content: space-between;
   align-items: center;
-  width: 34px;
-  margin-left: auto;
+  min-width: 34px;
+}
+
+.sorting-list-secondary-item {
+  margin-right: 12px;
+}
+
+.sorting-list-secondary-item:last-of-type {
+  margin: 0;
 }
 
 .sorting-secondary {
   display: block;
   color: var(--color-mid-gray);
 }
+
 
 .sorting-secondary:hover {
   color: var(--color-black);
