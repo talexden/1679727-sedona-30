@@ -3,6 +3,7 @@
   background-color: var(--background-midy-gray);
   background-image: url("../img/background-catalog.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .filter-form {
@@ -26,7 +27,6 @@
 }
 
 .filter-fieldset-legend {
-  margin-bottom: 11px;
   font-weight: 700;
   font-size: 16px;
 }
@@ -37,16 +37,38 @@
   list-style: none;
 }
 
-.filter-input-number-group {
+.filter-item {
+  position: relative;
+  margin-top: 25px;
+}
+
+.filter-checkbox + label {
+  padding-left: 40px;
+}
+
+.filter-checkbox + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/icons/checkbox-off.svg");
+  background-repeat: no-repeat;
+}
+
+.filter-checkbox:checked + label::before {
+  background-image: url("../img/icons/checkbox-on.svg");
+}
+
+.price-controls {
   position: relative;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-  padding: 6px;
+  margin: 10px 0 20px;
+  padding: 6px 0;
   border: 2px solid;
 }
 
-.filter-input-number-group::after {
+.price-controls::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -55,30 +77,68 @@
   width: 2px;
   height: 22px;
   background-color: var(--color-white);
-  transform: translate(0, -50%);
+  transform: translate(-1px, -50%);
 }
 
-.filter-input-label {
+.price-controls-label {
   display: flex;
-  align-items: center;
+  justify-content: center;
+  width: 50%;
+  transform: translateX(6px); //* PP *//
 }
 
-.filter-input-number {
-  max-width: 70px;  // я так понимаю этот параметр должен высчитывать js
+.price-controls-input {
   margin-left: 5px;
   color: inherit;
   background: none;
   border: none;
 }
 
-.filter-input-range {
-  margin-bottom: 25px;
+.range-controls {
+  position: relative;
+  padding-bottom: 33px;
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--background-dark-gray);
+  border: 8px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: 0 2px 0 0 var(--color-opacity-white);
+}
+
+.range-controls .toggle:hover {
+  top: -11px;
+  left: -1px;
+  width: 5px;
+  height: 5px;
+  border-width: 9px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background-color: var(--color-opacity-white);
+}
+
+.range-controls .bar {
+  width: 70%;
+  height: 2px;
+  background-color: var(--color-white);
 }
 
 .filter-submit-button {
-  margin-right: 96px; // пробовал align-self: ;
+  margin-right: 96px; /* PP */
   margin-left: auto;
   padding: 7px 33px 9px 34px;
   background: none;
   border: 2px solid;
+}
+
+.filter-submit-button:hover {
+  color: var(--color-black);
+  background: var(--background-white);
+  border-color: var(--color-white);
 }

@@ -33,13 +33,16 @@
               <legend class="filter-fieldset-legend">Инфраструктура:</legend>
               <ul class="filter-list">
                 <li class="filter-item">
-                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="basin" checked="checked">Бассейн</label>
+                  <input class="filter-checkbox visually-hidden" id="basin" type="checkbox" value="basin" checked="checked">
+                  <label for="basin">Бассейн</label>
                 </li>
                 <li class="filter-item">
-                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="parking">Парковка</label>
+                  <input class="filter-checkbox visually-hidden" id="parking" type="checkbox" value="parking">
+                  <label for="parking">Парковка</label>
                 </li>
                 <li class="filter-item">
-                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="wi-fi">Wi-Fi</label>
+                  <input class="filter-checkbox visually-hidden" id="wi-fi" type="checkbox" value="wi-fi">
+                  <label for="wi-fi">Wi-Fi</label>
                 </li>
               </ul>
             </fieldset>
@@ -47,23 +50,45 @@
               <legend class="filter-fieldset-legend">Тип жилья:</legend>
               <ul class="filter-list">
                 <li class="filter-item">
-                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="hotel" checked="checked">Гостиница</label>
+                  <input class="filter-checkbox visually-hidden" id="hotel" type="checkbox" value="hotel" checked="checked">
+                  <label for="hotel">Гостиница</label>
                 </li>
                 <li class="filter-item">
-                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="motel" checked="checked">Мотель</label>
+                  <input class="filter-checkbox visually-hidden" id="motel" type="checkbox" value="motel" checked="checked">
+                  <label for="motel">Мотель</label>
                 </li>
                 <li class="filter-item">
-                  <label class="checkbox-label"><input class="visually-hidden" type="checkbox" value="apartments" checked="checked">Апартаменты</label>
+                  <input class="filter-checkbox visually-hidden" id="apartments" type="checkbox" value="apartments" checked="checked">
+                  <label for="apartments">Апартаменты</label>
                 </li>
               </ul>
             </fieldset>
             <fieldset class="filter-fieldset">
               <legend class="filter-fieldset-legend">Стоимость в сутки (р):</legend>
-              <div class="filter-input-number-group">
-                <label class="filter-input-label">От <input class="filter-input-number" type="number"></label>
-                <label class="filter-input-label">До <input class="filter-input-number" type="number"></label>
+              <div class="filter-range">
+                <div class="price-controls">
+                  <label class="price-controls-label min-price">
+                    от <input class="price-controls-input" type="number" name="min-price" value="0" style="width: 20px">
+                  </label>
+                  <label class="price-controls-label max-price">
+                    до <input class="price-controls-input" type="number" name="max-price" value="3000" style="width: 42px">
+                  </label>
+                </div>
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar" style="
+                width: 80%;
+                margin-left: 0%
+              "></div>
+                  </div>
+                  <div class="toggle toggle-min" tabindex="0" style="
+              left: 0%
+            "></div>
+                  <div class="toggle toggle-max" tabindex="0" style="
+              left: 80%
+            "></div>
+                </div>
               </div>
-              <input class="filter-input-range" type="range" min="0" max="3000" value="3000">
               <button class="button filter-submit-button" type="submit">Показать</button>
             </fieldset>
           </form>

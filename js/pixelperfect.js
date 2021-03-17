@@ -6,7 +6,7 @@ if (!ppOffsets[page]) {
   localStorage.setItem(`ppOffsets`, JSON.stringify(ppOffsets));
 }
 
-const ppEl = document.documentElement;
+const ppEl = document.body;
 ppEl.style.setProperty(`--pp-offset`, `${ppOffsets[page]}px`);
 ppEl.style.setProperty(`--pp-img`, `url("../img/pixelperfect/${page}.jpg")`);
 
@@ -29,17 +29,19 @@ document.addEventListener(`keydown`, (evt) => {
 	if (document.activeElement !== document.body) {
 		return;
 	}
-  evt.preventDefault();
 
 	const isPP = Boolean(Number(localStorage.getItem(`pp`)));
 
 	if (evt.code === `KeyP`) {
+    evt.preventDefault();
 		const pp = Number(!isPP);
 		localStorage.setItem(`pp`, pp);
 		managePP(pp);
 	} else if (isPP && evt.code === `ArrowUp`) {
+    evt.preventDefault();
 		movePP(-1);
 	} else if (isPP && evt.code === `ArrowDown`) {
+    evt.preventDefault();
 		movePP(1);
 	}
 });
