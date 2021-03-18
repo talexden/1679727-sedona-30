@@ -11,11 +11,11 @@ ppEl.style.setProperty(`--pp-offset`, `${ppOffsets[page]}px`);
 ppEl.style.setProperty(`--pp-img`, `url("../img/pixelperfect/${page}.jpg")`);
 
 const managePP = (pp) => {
-	if (pp) {
-		ppEl.classList.add(`pixelperfect`);
-	} else {
-		ppEl.classList.remove(`pixelperfect`);
-	}
+  if (pp) {
+    ppEl.classList.add(`pixelperfect`);
+  } else {
+    ppEl.classList.remove(`pixelperfect`);
+  }
 };
 const movePP = (offset) => {
   ppOffsets[page] += offset;
@@ -26,22 +26,22 @@ const movePP = (offset) => {
 managePP(Number(localStorage.getItem(`pp`)));
 
 document.addEventListener(`keydown`, (evt) => {
-	if (document.activeElement !== document.body) {
-		return;
-	}
+  if (document.activeElement !== document.body) {
+    return;
+  }
 
-	const isPP = Boolean(Number(localStorage.getItem(`pp`)));
+  const isPP = Boolean(Number(localStorage.getItem(`pp`)));
 
-	if (evt.code === `KeyP`) {
+  if (evt.code === `KeyP`) {
     evt.preventDefault();
-		const pp = Number(!isPP);
-		localStorage.setItem(`pp`, pp);
-		managePP(pp);
-	} else if (isPP && evt.code === `ArrowUp`) {
+    const pp = Number(!isPP);
+    localStorage.setItem(`pp`, pp);
+    managePP(pp);
+  } else if (isPP && evt.code === `ArrowUp`) {
     evt.preventDefault();
-		movePP(-1);
-	} else if (isPP && evt.code === `ArrowDown`) {
+    movePP(-1);
+  } else if (isPP && evt.code === `ArrowDown`) {
     evt.preventDefault();
-		movePP(1);
-	}
+    movePP(1);
+  }
 });

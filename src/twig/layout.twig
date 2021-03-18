@@ -10,22 +10,20 @@
     <link rel="apple-touch-icon" href="img/favicons/180.png">
     <link rel="manifest" href="site.webmanifest">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="page-body">
-      {% include 'partials/header.twig' %}
-    {% if page == 'index' %}
-      <main class="main-primary">
-    {% else %}
-      <main>
-    {% endif %}
-      {% block pageMain %}
-        <h1 style="text-align: center; padding: 40px;">Страница в разработке</h1>
-      {% endblock %}
-      </main>
-      {% include 'partials/footer.twig' %}
-    </div>
+  <body class="page-body">
+    {% include 'partials/header.twig' %}
+  {% if page == 'index' %}
+    <main class="main-primary">
+  {% else %}
+    <main>
+  {% endif %}
+    {% block pageMain %}
+      <h1 class="search-header search-header-lead">Страница в разработке</h1>
+    {% endblock %}
+    </main>
+    {% include 'partials/footer.twig' %}
     {% block pixelperfect %}
       <script src="js/pixelperfect.js"></script>
     {% endblock %}

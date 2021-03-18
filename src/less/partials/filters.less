@@ -97,7 +97,7 @@
   padding-bottom: 33px;
 }
 
-.range-controls .toggle {
+.range-toggle {
   position: absolute;
   top: -9px;
   width: 4px;
@@ -108,7 +108,7 @@
   box-shadow: 0 2px 0 0 var(--color-opacity-white);
 }
 
-.range-controls .toggle:hover {
+.range-toggle:hover {
   top: -11px;
   left: -1px;
   width: 5px;
@@ -116,12 +116,12 @@
   border-width: 9px;
 }
 
-.range-controls .scale {
+.range-scale {
   height: 2px;
   background-color: var(--color-opacity-white);
 }
 
-.range-controls .bar {
+.range-bar {
   width: 70%;
   height: 2px;
   background-color: var(--color-white);
@@ -129,11 +129,12 @@
 
 .filter-submit-button {
   display: block;
-  margin-right: 96px; /* PP */
+  margin-right: auto;
   margin-left: auto;
-  padding: 7px 33px 9px 34px;
+  padding: 8px 34px;
   background: none;
   border: 2px solid;
+  transform: translateX(-6px); /* PP */
 }
 
 .filter-submit-button:hover {

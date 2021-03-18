@@ -17,48 +17,48 @@ const del = require('del');
 
 const {OFFLINE} = process.env;
 const SVGO_PLUGINS_CONFIG = {
-	floatPrecision: 2
+  floatPrecision: 2
 };
 const SVGO_CONFIG = {
-	plugins: [
-		{ removeViewBox: false },
-		{ removeTitle: true },
-		{ cleanupNumericValues: SVGO_PLUGINS_CONFIG },
-		{ convertPathData: SVGO_PLUGINS_CONFIG },
-		{ transformsWithOnePath: SVGO_PLUGINS_CONFIG },
-		{ convertTransform: SVGO_PLUGINS_CONFIG },
-		{ cleanupListOfValues: SVGO_PLUGINS_CONFIG }
-	]
+  plugins: [
+    { removeViewBox: false },
+    { removeTitle: true },
+    { cleanupNumericValues: SVGO_PLUGINS_CONFIG },
+    { convertPathData: SVGO_PLUGINS_CONFIG },
+    { transformsWithOnePath: SVGO_PLUGINS_CONFIG },
+    { convertTransform: SVGO_PLUGINS_CONFIG },
+    { cleanupListOfValues: SVGO_PLUGINS_CONFIG }
+  ]
 };
 
 const htmlTest = () => src('*.html')
-	.pipe(lintspaces({
+  .pipe(lintspaces({
     editorconfig: '.editorconfig'
   }))
   .pipe(lintspaces.reporter())
-	.pipe(htmlhint('.htmlhintrc'))
-	.pipe(htmlhint.reporter())
+  .pipe(htmlhint('.htmlhintrc'))
+  .pipe(htmlhint.reporter())
   .pipe(gulpIf(!OFFLINE, htmlValidator()))
   .pipe(gulpIf(!OFFLINE, htmlValidator.reporter()));
 
 const htmlBuild = () => src('src/twig/pages/**/*.twig')
-	.pipe(data(async (file) => {
+  .pipe(data(async (file) => {
     const page = file.path.replace(/\\/g, '/').replace(/^.*?twig\/pages\/(.*)\.twig$/, '$1');
     await del(`${page}.html`);
-		return {
-			page
-		};
-	}))
-	.pipe(twig())
-	.pipe(htmlBeautify())
-	.pipe(dest('.'));
+    return {
+      page
+    };
+  }))
+  .pipe(twig())
+  .pipe(htmlBeautify())
+  .pipe(dest('.'));
 
 const cssTest = () => src('src/less/**/*.less')
-	.pipe(lintspaces({
+  .pipe(lintspaces({
     editorconfig: '.editorconfig'
   }))
   .pipe(lintspaces.reporter())
-	.pipe(stylelint({
+  .pipe(stylelint({
     reporters: [
       {
         console: true,
@@ -95,9 +95,9 @@ const watchTask = () => {
     ui: false
   });
 
-	watch('src/twig/**/*.twig', series(htmlBuild, htmlTest, reload));
-	watch('src/less/**/*.less', series(cssTest, cssBuild, reload));
-	watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, reload));
+  watch('src/twig/**/*.twig', series(htmlBuild, htmlTest, reload));
+  watch('src/less/**/*.less', series(cssTest, cssBuild, reload));
+  watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, reload));
 };
 
 const test = parallel(htmlTest, cssTest);

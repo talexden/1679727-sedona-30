@@ -5,7 +5,7 @@
         <legend class="filter-fieldset-legend">Инфраструктура:</legend>
         <ul class="filter-list">
           <li class="filter-item">
-            <input  class="filter-checkbox visually-hidden" id="basin" type="checkbox" value="basin" checked="checked">
+            <input class="filter-checkbox visually-hidden" id="basin" type="checkbox" value="basin" checked="checked">
             <label for="basin">Бассейн</label>
           </li>
           <li class="filter-item">
@@ -51,18 +51,11 @@
             </label>
           </div>
           <div class="range-controls">
-            <div class="scale">
-              <div class="bar" style="
-                width: 80%;
-                margin-left: 0%
-              "></div>
+            <div class="range-scale">
+              <div class="range-bar" style="width: 80%;"></div>
             </div>
-            <div class="toggle toggle-min" tabindex="0" style="
-              left: 0%
-            "></div>
-            <div class="toggle toggle-max" tabindex="0" style="
-              left: 80%
-            "></div>
+            <div class="range-toggle toggle-min" tabindex="0"></div>
+            <div class="range-toggle toggle-max" tabindex="0" style="left: 80%;"></div>
           </div>
         </div>
         <button class="button filter-submit-button" type="submit">Показать</button>
