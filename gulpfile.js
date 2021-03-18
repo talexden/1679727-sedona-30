@@ -11,6 +11,8 @@ const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const imagemin = require('gulp-imagemin');
 const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const rename = require('gulp-rename');
 const gulpIf = require('gulp-if');
 const browserSync = require('browser-sync').create();
 const del = require('del');
@@ -72,7 +74,14 @@ const cssBuild = () => src('src/less/style.less')
   .pipe(postcss([
     autoprefixer()
   ]))
-  .pipe(dest(`css`));
+  .pipe(dest('css'))
+  .pipe(postcss([
+    cssnano()
+  ]))
+  .pipe(rename({
+    suffix: '.min'
+  }))
+  .pipe(dest('css'));
 
 // Сборка спрайта
 const spriteBuild = () => src('src/sprite/**/*.svg')
@@ -80,7 +89,7 @@ const spriteBuild = () => src('src/sprite/**/*.svg')
   .pipe(svgstore({
     inlineSvg: true
   }))
-  .pipe(dest(`img`));
+  .pipe(dest('img'));
 
 const reload = (done) => {
   browserSync.reload();

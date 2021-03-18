@@ -33,7 +33,6 @@
 .page-body {
   display: grid;
   align-content: start;
-  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   width: 1200px;
   min-height: 100vh;
@@ -267,8 +266,7 @@ img {
 }
 .reasons-image {
   width: 800px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .reasons-item-lead-group {
   padding: 48px;
@@ -366,8 +364,7 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .search-form-row {
   display: flex;
@@ -413,7 +410,6 @@ img {
   width: 38px;
   text-align: center;
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
 }
 .search-form-input:hover {
