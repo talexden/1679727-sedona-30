@@ -1,6 +1,6 @@
 .filter {
   padding: 24px 72px 34px;
-  background-color: var(--background-midy-gray);
+  background-color: var(--background-brown);
   background-image: url("../img/background-catalog.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -97,7 +97,7 @@
   padding-bottom: 33px;
 }
 
-.range-toggle {
+.range-controls-toggle {
   position: absolute;
   top: -9px;
   width: 4px;
@@ -108,7 +108,8 @@
   box-shadow: 0 2px 0 0 var(--color-opacity-white);
 }
 
-.range-toggle:hover {
+.range-controls-toggle:hover,
+.range-controls-toggle:focus {
   top: -11px;
   left: -1px;
   width: 5px;
@@ -116,12 +117,12 @@
   border-width: 9px;
 }
 
-.range-scale {
+.range-controls-scale {
   height: 2px;
   background-color: var(--color-opacity-white);
 }
 
-.range-bar {
+.range-controls-scale-bar {
   width: 70%;
   height: 2px;
   background-color: var(--color-white);
@@ -137,7 +138,8 @@
   transform: translateX(-6px); /* PP */
 }
 
-.filter-submit-button:hover {
+.filter-submit-button:hover,
+.filter-submit-button:focus {
   color: var(--color-black);
   background: var(--background-white);
   border-color: var(--color-white);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона: Гостиницы</title>
@@ -26,21 +26,21 @@
     </header>
     <main>
       <header class="filter">
-        <h1 class="visually-hidden">Поиск гостиницы в Седоне</h1>
-        <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
+        <h1 class="visually-hidden">Поиск гостиницы в Седоне по параметрам</h1>
+        <form class="filter-form" method="get" action="https://echo.htmlacademy.ru/" target="_blank">
           <fieldset class="filter-fieldset">
             <legend class="filter-fieldset-legend">Инфраструктура:</legend>
             <ul class="filter-list">
               <li class="filter-item">
-                <input class="filter-checkbox visually-hidden" id="basin" type="checkbox" value="basin" checked="checked">
+                <input class="filter-checkbox visually-hidden" id="basin" type="checkbox" name="basin" checked="checked">
                 <label for="basin">Бассейн</label>
               </li>
               <li class="filter-item">
-                <input class="filter-checkbox visually-hidden" id="parking" type="checkbox" value="parking">
+                <input class="filter-checkbox visually-hidden" id="parking" type="checkbox" name="parking">
                 <label for="parking">Парковка</label>
               </li>
               <li class="filter-item">
-                <input class="filter-checkbox visually-hidden" id="wi-fi" type="checkbox" value="wi-fi">
+                <input class="filter-checkbox visually-hidden" id="wi-fi" type="checkbox" name="wi-fi">
                 <label for="wi-fi">Wi-Fi</label>
               </li>
             </ul>
@@ -49,15 +49,15 @@
             <legend class="filter-fieldset-legend">Тип жилья:</legend>
             <ul class="filter-list">
               <li class="filter-item">
-                <input class="filter-checkbox visually-hidden" id="hotel" type="checkbox" value="hotel" checked="checked">
+                <input class="filter-checkbox visually-hidden" id="hotel" type="checkbox" name="hotel" checked="checked">
                 <label for="hotel">Гостиница</label>
               </li>
               <li class="filter-item">
-                <input class="filter-checkbox visually-hidden" id="motel" type="checkbox" value="motel" checked="checked">
+                <input class="filter-checkbox visually-hidden" id="motel" type="checkbox" name="motel" checked="checked">
                 <label for="motel">Мотель</label>
               </li>
               <li class="filter-item">
-                <input class="filter-checkbox visually-hidden" id="apartments" type="checkbox" value="apartments" checked="checked">
+                <input class="filter-checkbox visually-hidden" id="apartments" type="checkbox" name="apartments" checked="checked">
                 <label for="apartments">Апартаменты</label>
               </li>
             </ul>
@@ -66,22 +66,22 @@
             <legend class="filter-fieldset-legend">Стоимость в сутки (р):</legend>
             <div class="filter-range">
               <div class="price-controls">
-                <label class="price-controls-label min-price">
+                <label class="price-controls-label min-price" aria-label="Минимальная стоимость">
                   от <input class="price-controls-input" type="number" name="min-price" value="0" style="width: 20px">
                 </label>
-                <label class="price-controls-label max-price">
+                <label class="price-controls-label max-price" aria-label="Максимальная стоимость">
                   до <input class="price-controls-input" type="number" name="max-price" value="3000" style="width: 42px">
                 </label>
               </div>
               <div class="range-controls">
-                <div class="range-scale">
-                  <div class="range-bar" style="width: 80%;"></div>
+                <div class="range-controls-scale">
+                  <div class="range-controls-scale-bar" style="width: 80%;"></div>
                 </div>
-                <div class="range-toggle toggle-min" tabindex="0"></div>
-                <div class="range-toggle toggle-max" tabindex="0" style="left: 80%;"></div>
+                <div class="range-controls-toggle toggle-min" tabindex="0"><span class="visually-hidden">Выбрать минимальную стоимость</span></div>
+                <div class="range-controls-toggle toggle-max" tabindex="0" style="left: 80%;"><span class="visually-hidden">Выбрать максимальную стоимость</span></div>
               </div>
             </div>
-            <button class="button filter-submit-button" type="submit">Показать</button>
+            <button class="button filter-submit-button" type="submit" aria-label="Отфильтровать гостиницы по выбранным параметрам">Показать</button>
           </fieldset>
         </form>
       </header>
@@ -93,18 +93,18 @@
             <h3 class="sorting-title">Сортировка:</h3>
             <ul class="sorting-list sorting-list-primary">
               <li class="sorting-list-item">
-                <a class="sorting-primary sorting-primary-current">По цене</a>
+                <a class="sorting-primary sorting-primary-current" aria-label="Сортировка по цене">По цене</a>
               </li>
               <li class="sorting-list-item">
-                <a class="sorting-primary" href="#!">По типу</a>
+                <a class="sorting-primary" href="#!" aria-label="Сортировка по типу">По типу</a>
               </li>
               <li class="sorting-list-item">
-                <a class="sorting-primary" href="#!">По рейтингу</a>
+                <a class="sorting-primary" href="#!" aria-label="Сортировка по рейтингу">По рейтингу</a>
               </li>
             </ul>
             <ul class="sorting-list sorting-list-secondary">
               <li class="sorting-list-secondary-item">
-                <a class="sorting-secondary" href="#!">
+                <a class="sorting-secondary" href="#!" aria-label="Сортировка по возрастанию">
                   <span class="visually-hidden">Сортировка по возрастанию</span>
                   <svg class="symbol sorting-item-lower-first-icon" width="11" height="10" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/sprite.svg#lower-first" />
@@ -112,7 +112,7 @@
                 </a>
               </li>
               <li class="sorting-list-secondary-item">
-                <a class="sorting-secondary sorting-secondary-current">
+                <a class="sorting-secondary sorting-secondary-current" aria-label="Сортировка по убыванию">
                   <span class="visually-hidden">Сортировка по убыванию</span>
                   <svg class="symbol sorting-item-higher-first-icon" width="11" height="10" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/sprite.svg#higher-first" />
@@ -134,8 +134,8 @@
                 <p class="cards-item-info">От 4000 р.</p>
               </div>
               <div class="cards-item-buttons">
-                <a class="button button-primary cards-button" href="#!">Подробнее</a>
-                <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+                <a class="button button-primary cards-button" href="#!" aria-label="Гостиница Amara Resorting, подробнее">Подробнее</a>
+                <a class="button button-secondary cards-button" href="#!" aria-label="Гостиница Amara Resorting, забронировать">Забронировать</a>
               </div>
             </div>
             <div class="cards-rating-group">
@@ -154,8 +154,8 @@
                 <p class="cards-item-info">От 3000 р.</p>
               </div>
               <div class="cards-item-buttons">
-                <a class="button button-primary cards-button" href="#!">Подробнее</a>
-                <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+                <a class="button button-primary cards-button" href="#!" aria-label="Гостиница Desert Quail Inn, подробнее">Подробнее</a>
+                <a class="button button-secondary cards-button" href="#!" aria-label="Гостиница Desert Quail Inn, забронировать">Забронировать</a>
               </div>
             </div>
             <div class="cards-rating-group">
@@ -174,8 +174,8 @@
                 <p class="cards-item-info">От 2000 р.</p>
               </div>
               <div class="cards-item-buttons">
-                <a class="button button-primary cards-button" href="#!">Подробнее</a>
-                <a class="button button-secondary cards-button" href="#!">Забронировать</a>
+                <a class="button button-primary cards-button" href="#!" aria-label="Гостиница Villas at Poco Diablo, подробнее">Подробнее</a>
+                <a class="button button-secondary cards-button" href="#!" aria-label="Гостиница Villas at Poco Diablo, забронировать">Забронировать</a>
               </div>
             </div>
             <div class="cards-rating-group">
@@ -196,7 +196,7 @@
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
         <ul class="footer-social-list">
           <li>
-            <a class="button-primary footer-social-button" href="#!">
+            <a class="button-primary footer-social-button" href="#!" aria-label="Седона в twitter">
               <span class="visually-hidden">Twitter</span>
               <svg class="symbol footer-social-icon" width="17" height="17" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/icons/sprite.svg#twitter" />
@@ -204,7 +204,7 @@
             </a>
           </li>
           <li>
-            <a class="button-primary footer-social-button" href="#!">
+            <a class="button-primary footer-social-button" href="#!" aria-label="Седона на facebook">
               <span class="visually-hidden">Facebook</span>
               <svg class="symbol footer-social-icon" width="12" height="22" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/icons/sprite.svg#facebook" />
@@ -212,7 +212,7 @@
             </a>
           </li>
           <li>
-            <a class="button-primary footer-social-button" href="#!">
+            <a class="button-primary footer-social-button" href="#!" aria-label="Седона в youtube">
               <span class="visually-hidden">Youtube</span>
               <svg class="symbol footer-social-icon" width="20" height="16" xmlns="http://www.w3.org/2000/svg">
                 <use xlink:href="img/icons/sprite.svg#youtube" />
@@ -224,7 +224,7 @@
       <section class="footer-copyright">
         <h2 class="visually-hidden">Копирайт </h2>
         <p class="footer-copyright-text">Website by
-          <a class="footer-copyright-link" href="https://htmlacademy.ru/intensive/htmlcss">
+          <a class="footer-copyright-link" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="HTML lacademy">
             <svg class="symbol footer-copyright-icon" width="115" height="41" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/icons/sprite.svg#logo-htmlacademy" />
             </svg>
