@@ -106,11 +106,11 @@ const watchTask = () => {
 
   watch('src/twig/**/*.twig', series(htmlBuild, htmlTest, reload));
   watch('src/less/**/*.less', series(cssTest, cssBuild, reload));
-  watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, reload));
+  watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, htmlBuild, reload));
 };
 
 const test = parallel(htmlTest, cssTest);
-const build = parallel(htmlBuild, cssBuild, spriteBuild);
+const build = series(spriteBuild, parallel(htmlBuild, cssBuild));
 
 exports.test = test;
 exports.build = build;

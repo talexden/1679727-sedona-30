@@ -13,6 +13,10 @@
     <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body class="page-body">
+    <div hidden>
+      {% include '../../img/sprite.svg' %}
+    </div>
+
     {% include 'partials/header.twig' %}
 
     <main {{ page == 'index' ? 'class="main-primary"' }}>
