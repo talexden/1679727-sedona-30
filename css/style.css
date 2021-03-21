@@ -549,6 +549,13 @@ img {
   color: inherit;
   background: none;
   border: none;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+.price-controls-input::-webkit-outer-spin-button,
+.price-controls-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
 }
 .range-controls {
   position: relative;
