@@ -362,7 +362,6 @@ img {
 }
 .search-form-show {
   visibility: visible;
-  transition: visibility 0.6s;
   animation-name: bounce-show;
   animation-duration: 0.6s;
 }
@@ -428,6 +427,11 @@ img {
 .search-form-number {
   width: 38px;
   text-align: center;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+.search-form-number::-webkit-outer-spin-button,
+.search-form-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
           appearance: none;
 }
@@ -811,6 +815,15 @@ img {
   }
 }
 @keyframes bounce-hide {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(0);
+  }
   100% {
     transform: translateY(-2000px);
   }

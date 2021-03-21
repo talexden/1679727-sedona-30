@@ -40,7 +40,6 @@
 
 .search-form-show {
   visibility: visible;
-  transition: visibility 0.6s;
   animation-name: bounce-show;
   animation-duration: 0.6s;
 }
@@ -118,7 +117,12 @@
 .search-form-number {
   width: 38px;
   text-align: center;
-  appearance: none;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
 }
 
 .search-form-input:hover,
