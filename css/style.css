@@ -796,25 +796,6 @@ img {
   font-style: normal;
   src: local("PT Sans Bold"), url("../fonts/ptsans-bold.woff2") format("woff2"), url("../fonts/ptsans-bold.woff") format("woff");
 }
-.pixelperfect {
-  position: relative;
-}
-.pixelperfect::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  margin-top: var(--pp-offset);
-  background-image: var(--pp-img);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  opacity: 0.5;
-  filter: invert(1);
-  pointer-events: none;
-}
 @keyframes bounce-show {
   0% {
     transform: translateY(-100%);
