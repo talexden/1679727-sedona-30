@@ -3,6 +3,24 @@ const searchForm = document.querySelector('.search-form');
 const searchFields = searchForm.querySelectorAll('[name]');
 
 let isStorageSupport = true;
+let isShowSearch = true;
+
+const toggleSearchVisibility = (isShowSearchNow) => {
+  isShowSearch = isShowSearchNow;
+
+  if (isShowSearch) {
+    searchForm.classList.remove('search-form-hide');
+    searchForm.classList.add('search-form-appear');
+    setTimeout(() => searchForm.classList.remove('search-form-appear'), 600);
+  } else {
+    searchForm.classList.remove('search-form-error');
+    searchForm.classList.add('search-form-disappear');
+    setTimeout(() => {
+      searchForm.classList.remove('search-form-disappear');
+      searchForm.classList.add('search-form-hide');
+    }, 600);
+  }
+}
 
 try {
   localStorage.getItem('test');
@@ -20,12 +38,7 @@ if (isStorageSupport) {
 }
 
 searchButton.addEventListener('click', function () {
-  searchForm.classList.toggle('search-form-hide');
-
-  if (!searchForm.classList.contains('search-form-hide')) {
-    searchForm.classList.add('search-form-appear');
-    setTimeout(() => searchForm.classList.remove('search-form-appear'), 600);
-  }
+  toggleSearchVisibility(!isShowSearch);
 });
 
 searchForm.addEventListener('submit', function (evt) {
@@ -36,14 +49,11 @@ searchForm.addEventListener('submit', function (evt) {
     setTimeout(() => searchForm.classList.add('search-form-error'), 0);
 
     for (const field of searchFields) {
-      console.log(field.validity.valid);
       if (!field.validity.valid) {
         field.focus();
-        break; // выходим из цикла
+        return; // выходим из цикла и функции
       }
     }
-
-    return; // выходим из функции
   }
 
   for (const field of searchFields) {
@@ -54,8 +64,7 @@ searchForm.addEventListener('submit', function (evt) {
 });
 
 window.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 27) {
-    searchForm.classList.remove('search-form-show');
+  if (evt.keyCode === 27 && isShowSearch) {
+    toggleSearchVisibility(false);
   }
 });
-
