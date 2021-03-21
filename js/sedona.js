@@ -68,3 +68,12 @@ window.addEventListener('keydown', function (evt) {
     toggleSearchVisibility(false);
   }
 });
+
+for (const numberField of searchForm.querySelectorAll('[type="number"]')) {
+  numberField.parentElement.querySelector('.search-num-decrease').addEventListener('click', function () {
+    numberField.stepDown();
+  });
+  numberField.parentElement.querySelector('.search-num-increase').addEventListener('click', function () {
+    numberField.stepUp();
+  });
+}
