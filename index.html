@@ -92,11 +92,11 @@
         </header>
         <div class="search-form-wrapper">
           <img class="search-image" src="img/map.jpg" alt="Гостиницы на карте" width="1199" height="593">
-          <form class="search-form search-form-show" action="https://echo.htmlacademy.ru/" method="get">
+          <form class="search-form search-form-hide" action="https://echo.htmlacademy.ru/" method="get" novalidate>
             <p class="search-form-row">
               <label class="search-form-label">
                 <span class="search-form-title">Дата заезда:</span>
-                <input class="search-form-input search-form-date" type="text" name="date-of-check-in" value="24 апреля 2017">
+                <input class="search-form-input search-form-date" type="text" name="date-of-check-in" value="24 апреля 2017" required>
               </label>
               <button class="search-form-button" type="button" aria-label="Выбрать дату заезда, календарь">
                 <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +107,7 @@
             <p class="search-form-row">
               <label class="search-form-label">
                 <span class="search-form-title">Дата выезда:</span>
-                <input class="search-form-input search-form-date" type="text" name="date-of-check-out" value="4 июля 2017">
+                <input class="search-form-input search-form-date" type="text" name="date-of-check-out" value="4 июля 2017" required>
               </label>
               <button class="search-form-button" type="button" aria-label="Выбрать дату выезда, календарь">
                 <svg class="search-form-icons" width="21" height="23" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
                     <use xlink:href="img/icons/sprite.svg#decrease" />
                   </svg>
                 </button>
-                <input class="search-form-input search-form-number" id="adults" type="number" name="adults" value="2">
+                <input class="search-form-input search-form-number" id="adults" type="number" name="adults" min="1" step="1" value="2">
                 <button class="search-form-button" type="button" aria-label="Увеличить количество взрослых">
                   <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/sprite.svg#increase" />
@@ -137,7 +137,7 @@
                     <use xlink:href="img/icons/sprite.svg#decrease" />
                   </svg>
                 </button>
-                <input class="search-form-input search-form-number" id="children" type="number" name="children" value="0">
+                <input class="search-form-input search-form-number" id="children" type="number" name="children" min="0" step="1" value="0">
                 <button class="search-form-button" type="button" aria-label="Увеличить количество детей">
                   <svg class="search-form-icons" width="11" height="11" xmlns="http://www.w3.org/2000/svg">
                     <use xlink:href="img/icons/sprite.svg#increase" />

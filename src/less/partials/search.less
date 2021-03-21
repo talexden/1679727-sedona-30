@@ -9,7 +9,7 @@
   font-weight: 700;
   font-size: 30px;
   line-height: 24px;
-  transform: translateX(-5px); //* PP *//
+  transform: translateX(-5px); /* PP по оси Х */
 }
 
 .search-header-text {
@@ -27,23 +27,28 @@
 
 .search-form-wrapper {
   position: relative;
-  box-sizing: border-box;
-  min-height: 593px;
   padding: 0 316px 198px;
   overflow: hidden;
 }
 
 .search-form {
   position: relative;
-  display: none;
   padding: 55px;
   background-color: var(--background-white);
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
 
 .search-form-show {
-  display: block;
-  animation-name: bounce;
+  visibility: visible;
+  transition: visibility 0.6s;
+  animation-name: bounce-show;
+  animation-duration: 0.6s;
+}
+
+.search-form-hide {
+  visibility: hidden;
+  transition: visibility 0.6s;
+  animation-name: bounce-hide;
   animation-duration: 0.6s;
 }
 
@@ -58,7 +63,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  min-height: 593px;
+  min-height: 100%;
   object-fit: cover;
 }
 
