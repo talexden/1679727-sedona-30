@@ -1,60 +1,60 @@
 <header class="filter">
-    <h1 class="visually-hidden">Поиск гостиницы в Седоне по параметрам</h1>
-    <form class="filter-form"  method="get" action="https://echo.htmlacademy.ru/" target="_blank">
-      <fieldset class="filter-fieldset">
-        <legend class="filter-fieldset-legend">Инфраструктура:</legend>
-        <ul class="filter-list">
-          <li class="filter-item">
-            <input class="filter-checkbox visually-hidden" id="basin" type="checkbox" name="basin" checked="checked">
-            <label for="basin">Бассейн</label>
-          </li>
-          <li class="filter-item">
-            <input class="filter-checkbox visually-hidden" id="parking" type="checkbox" name="parking">
-            <label for="parking">Парковка</label>
-          </li>
-          <li class="filter-item">
-            <input class="filter-checkbox visually-hidden" id="wi-fi" type="checkbox" name="wi-fi">
-            <label for="wi-fi">Wi-Fi</label>
-          </li>
-        </ul>
-      </fieldset>
-      <fieldset class="filter-fieldset">
-        <legend class="filter-fieldset-legend">Тип жилья:</legend>
-        <ul class="filter-list">
-          <li class="filter-item">
-            <input class="filter-checkbox visually-hidden" id="hotel" type="checkbox" name="hotel" checked="checked">
-            <label for="hotel">Гостиница</label>
-          </li>
-          <li class="filter-item">
-            <input class="filter-checkbox visually-hidden" id="motel" type="checkbox" name="motel" checked="checked">
-            <label for="motel">Мотель</label>
-          </li>
-          <li class="filter-item">
-            <input class="filter-checkbox visually-hidden" id="apartments" type="checkbox" name="apartments" checked="checked">
-            <label for="apartments">Апартаменты</label>
-          </li>
-        </ul>
-      </fieldset>
-      <fieldset class="filter-fieldset">
-        <legend class="filter-fieldset-legend">Стоимость в сутки (р):</legend>
-        <div class="filter-range">
-          <div class="price-controls">
-            <label class="price-controls-label min-price" aria-label="Минимальная стоимость">
-              от <input class="price-controls-input" type="number" name="min-price" value="0" style="width: 20px">
-            </label>
-            <label class="price-controls-label max-price" aria-label="Максимальная стоимость">
-              до <input class="price-controls-input" type="number" name="max-price" value="3000" style="width: 42px">
-            </label>
-          </div>
-          <div class="range-controls">
-            <div class="range-controls-scale">
-              <div class="range-controls-scale-bar" style="width: 80%;"></div>
-            </div>
-            <div class="range-controls-toggle toggle-min" tabindex="0"><span class="visually-hidden">Выбрать минимальную стоимость</span></div>
-            <div class="range-controls-toggle toggle-max" tabindex="0" style="left: 80%;"><span class="visually-hidden">Выбрать максимальную стоимость</span></div>
-          </div>
+  <h1 class="visually-hidden">Поиск гостиницы в Седоне по параметрам</h1>
+  <form class="filter-form"  method="get" action="https://echo.htmlacademy.ru/" target="_blank">
+    <fieldset class="filter-fieldset">
+      <legend class="filter-fieldset-legend">Инфраструктура:</legend>
+      <ul class="filter-list">
+        <li class="filter-item">
+          <input class="filter-checkbox visually-hidden" id="basin" type="checkbox" name="basin" checked="checked">
+          <label for="basin">Бассейн</label>
+        </li>
+        <li class="filter-item">
+          <input class="filter-checkbox visually-hidden" id="parking" type="checkbox" name="parking">
+          <label for="parking">Парковка</label>
+        </li>
+        <li class="filter-item">
+          <input class="filter-checkbox visually-hidden" id="wi-fi" type="checkbox" name="wi-fi">
+          <label for="wi-fi">Wi-Fi</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter-fieldset">
+      <legend class="filter-fieldset-legend">Тип жилья:</legend>
+      <ul class="filter-list">
+        <li class="filter-item">
+          <input class="filter-checkbox visually-hidden" id="hotel" type="checkbox" name="hotel" checked="checked">
+          <label for="hotel">Гостиница</label>
+        </li>
+        <li class="filter-item">
+          <input class="filter-checkbox visually-hidden" id="motel" type="checkbox" name="motel" checked="checked">
+          <label for="motel">Мотель</label>
+        </li>
+        <li class="filter-item">
+          <input class="filter-checkbox visually-hidden" id="apartments" type="checkbox" name="apartments" checked="checked">
+          <label for="apartments">Апартаменты</label>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset class="filter-fieldset">
+      <legend class="filter-fieldset-legend">Стоимость в сутки (р):</legend>
+      <div class="filter-range">
+        <div class="price-controls">
+          <label class="price-controls-label min-price" aria-label="Минимальная стоимость">
+            от <input class="price-controls-input" type="number" name="min-price" value="0" style="width: 20px">
+          </label>
+          <label class="price-controls-label max-price" aria-label="Максимальная стоимость">
+            до <input class="price-controls-input" type="number" name="max-price" value="3000" style="width: 42px">
+          </label>
         </div>
-        <button class="button filter-submit-button" type="submit" aria-label="Отфильтровать гостиницы по выбранным параметрам">Показать</button>
-      </fieldset>
-    </form>
-  </header>
+        <div class="range-controls">
+          <div class="range-controls-scale">
+            <div class="range-controls-scale-bar" style="width: 80%;"></div>
+          </div>
+          <div class="range-controls-toggle toggle-min" tabindex="0"><span class="visually-hidden">Выбрать минимальную стоимость</span></div>
+          <div class="range-controls-toggle toggle-max" tabindex="0" style="left: 80%;"><span class="visually-hidden">Выбрать максимальную стоимость</span></div>
+        </div>
+      </div>
+      <button class="button filter-submit-button" type="submit" aria-label="Отфильтровать гостиницы по выбранным параметрам">Показать</button>
+    </fieldset>
+  </form>
+</header>
