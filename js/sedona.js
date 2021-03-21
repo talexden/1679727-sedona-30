@@ -1,79 +1,83 @@
-const searchButton = document.querySelector('.search-button');
+
 const searchForm = document.querySelector('.search-form');
-const searchFields = searchForm.querySelectorAll('[name]');
 
-let isStorageSupport = true;
-let isShowSearch = true;
+if (searchForm) {
+  const searchButton = document.querySelector('.search-button');
+  const searchFields = searchForm.querySelectorAll('[name]');
 
-const toggleSearchVisibility = (isShowSearchNow) => {
-  isShowSearch = isShowSearchNow;
+  let isStorageSupport = true;
+  let isShowSearch = true;
 
-  if (isShowSearch) {
-    searchForm.classList.remove('search-form-hide');
-    searchForm.classList.add('search-form-appear');
-    setTimeout(() => searchForm.classList.remove('search-form-appear'), 600);
-  } else {
-    searchForm.classList.remove('search-form-error');
-    searchForm.classList.add('search-form-disappear');
-    setTimeout(() => {
-      searchForm.classList.remove('search-form-disappear');
-      searchForm.classList.add('search-form-hide');
-    }, 600);
-  }
-}
+  const toggleSearchVisibility = (isShowSearchNow) => {
+    isShowSearch = isShowSearchNow;
 
-try {
-  localStorage.getItem('test');
-} catch (err) {
-  isStorageSupport = false;
-}
-
-if (isStorageSupport) {
-  for (const field of searchFields) {
-    const storedValue = localStorage.getItem(field.name);
-    if (storedValue) {
-      field.value = storedValue;
+    if (isShowSearch) {
+      searchForm.classList.remove('search-form-hide');
+      searchForm.classList.add('search-form-appear');
+      setTimeout(() => searchForm.classList.remove('search-form-appear'), 600);
+    } else {
+      searchForm.classList.remove('search-form-error');
+      searchForm.classList.add('search-form-disappear');
+      setTimeout(() => {
+        searchForm.classList.remove('search-form-disappear');
+        searchForm.classList.add('search-form-hide');
+      }, 600);
     }
   }
-}
 
-searchButton.addEventListener('click', function () {
-  toggleSearchVisibility(!isShowSearch);
-});
+  try {
+    localStorage.getItem('test');
+  } catch (err) {
+    isStorageSupport = false;
+  }
 
-searchForm.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  searchForm.classList.remove('search-form-error');
-
-  if (!searchForm.checkValidity()) {
-    setTimeout(() => searchForm.classList.add('search-form-error'), 0);
-
+  if (isStorageSupport) {
     for (const field of searchFields) {
-      if (!field.validity.valid) {
-        field.focus();
-        return; // выходим из цикла и функции
+      const storedValue = localStorage.getItem(field.name);
+      if (storedValue) {
+        field.value = storedValue;
       }
     }
   }
 
-  for (const field of searchFields) {
-    localStorage.setItem(field.name, field.value);
-  }
-
-  searchForm.submit();
-});
-
-window.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 27 && isShowSearch) {
-    toggleSearchVisibility(false);
-  }
-});
-
-for (const numberField of searchForm.querySelectorAll('[type="number"]')) {
-  numberField.parentElement.querySelector('.search-num-decrease').addEventListener('click', function () {
-    numberField.stepDown();
+  searchButton.addEventListener('click', function () {
+    toggleSearchVisibility(!isShowSearch);
   });
-  numberField.parentElement.querySelector('.search-num-increase').addEventListener('click', function () {
-    numberField.stepUp();
+
+  searchForm.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    searchForm.classList.remove('search-form-error');
+
+    if (!searchForm.checkValidity()) {
+      setTimeout(() => searchForm.classList.add('search-form-error'), 0);
+
+      for (const field of searchFields) {
+        if (!field.validity.valid) {
+          field.focus();
+          return; // выходим из цикла и функции
+        }
+      }
+    }
+
+    for (const field of searchFields) {
+      localStorage.setItem(field.name, field.value);
+    }
+
+    searchForm.submit();
   });
+
+  window.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === 27 && isShowSearch) {
+      toggleSearchVisibility(false);
+    }
+  });
+
+  for (const numberField of searchForm.querySelectorAll('[type="number"]')) {
+    numberField.parentElement.querySelector('.search-num-decrease').addEventListener('click', function () {
+      numberField.stepDown();
+    });
+    numberField.parentElement.querySelector('.search-num-increase').addEventListener('click', function () {
+      numberField.stepUp();
+    });
+  }
 }
