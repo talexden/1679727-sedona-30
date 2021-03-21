@@ -136,7 +136,6 @@ img {
 }
 .nav-list a:active {
   color: var(--color-black);
-  mix-blend-mode: normal;
   opacity: 0.3;
 }
 /* footer */
@@ -337,6 +336,7 @@ img {
   font-size: 30px;
   line-height: 24px;
   transform: translateX(-5px);
+  /* PP по оси Х */
 }
 .search-header-text {
   margin-bottom: 43px;
@@ -360,12 +360,28 @@ img {
   background-color: var(--background-white);
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
+.search-form-appear {
+  visibility: visible;
+  animation-name: bounce-show;
+  animation-duration: 0.6s;
+}
+.search-form-hide {
+  visibility: hidden;
+  transition: visibility 0.6s;
+  animation-name: bounce-hide;
+  animation-duration: 0.6s;
+}
+.search-form-error {
+  animation-name: shake;
+  animation-duration: 0.6s;
+}
 .search-image {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  min-height: 100%;
   object-fit: cover;
 }
 .search-form-row {
@@ -411,6 +427,11 @@ img {
 .search-form-number {
   width: 38px;
   text-align: center;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+.search-form-number::-webkit-outer-spin-button,
+.search-form-number::-webkit-inner-spin-button {
   -webkit-appearance: none;
           appearance: none;
 }
@@ -520,6 +541,7 @@ img {
   justify-content: center;
   width: 50%;
   transform: translateX(6px);
+  /* PP */
 }
 .price-controls-input {
   margin-left: 5px;
@@ -777,4 +799,51 @@ img {
   opacity: 0.5;
   filter: invert(1);
   pointer-events: none;
+}
+@keyframes bounce-show {
+  0% {
+    transform: translateY(-110%);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounce-hide {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-5%);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-110%);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }
