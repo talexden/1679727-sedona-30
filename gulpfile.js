@@ -14,6 +14,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const rename = require('gulp-rename');
 const gulpIf = require('gulp-if');
+const terser = require('gulp-terser');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 
@@ -83,6 +84,13 @@ const cssBuild = () => src('src/less/style.less')
   }))
   .pipe(dest('css'));
 
+const jsMin = () => src('js/sedona.js')
+  .pipe(terser())
+  .pipe(rename({
+    suffix: '.min'
+  }))
+  .pipe(dest('js'));
+
 // Сборка спрайта
 const spriteBuild = () => src('src/sprite/**/*.svg')
   .pipe(imagemin([imagemin.svgo(SVGO_CONFIG)]))
@@ -106,11 +114,12 @@ const watchTask = () => {
 
   watch('src/twig/**/*.twig', series(htmlBuild, htmlTest, reload));
   watch('src/less/**/*.less', series(cssTest, cssBuild, reload));
+  watch('js/sedona.js', series(jsMin, reload));
   watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, htmlBuild, reload));
 };
 
 const test = parallel(htmlTest, cssTest);
-const build = series(spriteBuild, parallel(htmlBuild, cssBuild));
+const build = series(spriteBuild, parallel(htmlBuild, cssBuild, jsMin));
 
 exports.test = test;
 exports.build = build;
