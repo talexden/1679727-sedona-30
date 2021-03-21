@@ -14,21 +14,18 @@
   </head>
   <body class="page-body">
     {% include 'partials/header.twig' %}
-  {% if page == 'index' %}
-    <main class="main-primary">
-  {% else %}
-    <main>
-  {% endif %}
-    {% block pageMain %}
-      <h1 class="search-header search-header-lead">Страница в разработке</h1>
-    {% endblock %}
+
+    <main {{ page == 'index' ? 'class="main-primary"' }}>
+      {% block pageMain %}
+        <h1 class="search-header search-header-lead">Страница в разработке</h1>
+      {% endblock %}
     </main>
+
     {% include 'partials/footer.twig' %}
+
     {% block pixelperfect %}
       <script src="js/pixelperfect.js"></script>
     {% endblock %}
-    {% block pixelperfect %}
-      <script src="js/sedona.js"></script>
-    {% endblock %}
+    <script src="js/sedona.js"></script>
   </body>
 </html>

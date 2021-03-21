@@ -383,6 +383,7 @@ img {
   left: 0;
   min-height: 100%;
   object-fit: cover;
+  border: none;
 }
 .search-form-row {
   display: flex;
@@ -470,7 +471,7 @@ img {
   line-height: 26px;
 }
 .filter {
-  padding: 24px 72px 34px;
+  padding: 26px 72px 32px;
   background-color: var(--background-brown);
   background-image: url("../img/background-catalog.jpg");
   background-repeat: no-repeat;
@@ -519,12 +520,17 @@ img {
 .filter-checkbox:checked + label::before {
   background-image: url("../img/icons/checkbox-on.svg");
 }
+.filter-checkbox:disabled + label {
+  cursor: not-allowed;
+  opacity: 0.285;
+}
 .price-controls {
   position: relative;
   display: flex;
-  margin: 10px 0 20px;
-  padding: 6px 0;
+  margin: 11px 0 20px;
+  padding: 5px 0 6px;
   border: 2px solid;
+  border-radius: 2px;
 }
 .price-controls::after {
   content: "";
@@ -595,6 +601,7 @@ img {
   padding: 8px 34px;
   background: none;
   border: 2px solid;
+  border-radius: 2px;
   transform: translateX(-6px);
   /* PP */
 }
