@@ -504,10 +504,15 @@ img {
   position: relative;
   margin-top: 25px;
 }
-.filter-checkbox + label {
+.filter-item-checkbox {
   padding-left: 40px;
 }
-.filter-checkbox + label::before {
+.filter-item-checkbox-input {
+  position: absolute;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.filter-item-checkbox-box::before {
   content: "";
   position: absolute;
   left: 0;
@@ -516,10 +521,10 @@ img {
   background-image: url("../img/icons/checkbox-off.svg");
   background-repeat: no-repeat;
 }
-.filter-checkbox:checked + label::before {
+.filter-item-checkbox-input:checked + .filter-item-checkbox-box::before {
   background-image: url("../img/icons/checkbox-on.svg");
 }
-.filter-checkbox:disabled + label {
+.filter-item-checkbox-input:disabled + .filter-item-checkbox-box {
   cursor: not-allowed;
   opacity: 0.285;
 }
