@@ -101,8 +101,6 @@ img {
   position: absolute;
   left: 50%;
   z-index: 1;
-  display: inline-block;
-  margin: 0 auto;
   transform: translate(-50%, 0);
 }
 .nav {
@@ -285,6 +283,7 @@ img {
 }
 .reasons-features-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
