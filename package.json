@@ -1,10 +1,10 @@
 {
   "private": "true",
   "scripts": {
-    "test": "gulp test --silent",
-    "start": "gulp",
-    "start:offline": "cross-env OFFLINE=1 gulp",
-    "build": "npm test && gulp build"
+    "test": "gulp test",
+    "start": "cross-env IS_DEV=1 gulp",
+    "start:offline": "cross-env IS_DEV=1 IS_OFFLINE=1 gulp",
+    "build": "gulp build"
   },
   "husky": {
     "hooks": {
@@ -39,6 +39,7 @@
     "gulp-twig": "1.2.0",
     "gulp-w3c-html-validator": "2.0.1",
     "husky": "4.3.8",
+    "normalize.css": "8.0.1",
     "postcss": "8.2.6",
     "stylelint": "13.9.0",
     "stylelint-config-htmlacademy": "0.1.4",
