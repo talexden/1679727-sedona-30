@@ -8,8 +8,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test",
-      "pre-push": "npm run build"
+      "pre-push": "npm test"
     }
   },
   "browserslist": [
