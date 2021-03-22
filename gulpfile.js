@@ -1,4 +1,4 @@
-const {src, dest, watch, series, parallel} = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const htmlValidator = require('gulp-w3c-html-validator');
 const htmlhint = require('gulp-htmlhint');
 const lintspaces = require('gulp-lintspaces');
@@ -18,7 +18,7 @@ const terser = require('gulp-terser');
 const browserSync = require('browser-sync').create();
 const del = require('del');
 
-const {OFFLINE} = process.env;
+const { IS_DEV, IS_OFFLINE } = process.env;
 const SVGO_PLUGINS_CONFIG = {
   floatPrecision: 2
 };
@@ -34,27 +34,34 @@ const SVGO_CONFIG = {
   ]
 };
 
-const htmlTest = () => src('*.html')
+const cssSources = ['src/less/style.less'];
+const jsSources = ['src/js/script.js'];
+if (IS_DEV) {
+  cssSources.push('src/less/dev.less');
+  jsSources.push('src/js/dev.js');
+}
+
+const htmlTest = () => src('src/twig/**/*.twig')
   .pipe(lintspaces({
     editorconfig: '.editorconfig'
   }))
-  .pipe(lintspaces.reporter())
-  .pipe(htmlhint('.htmlhintrc'))
-  .pipe(htmlhint.reporter())
-  .pipe(gulpIf(!OFFLINE, htmlValidator()))
-  .pipe(gulpIf(!OFFLINE, htmlValidator.reporter()));
+  .pipe(lintspaces.reporter());
 
 const htmlBuild = () => src('src/twig/pages/**/*.twig')
   .pipe(data(async (file) => {
     const page = file.path.replace(/\\/g, '/').replace(/^.*?twig\/pages\/(.*)\.twig$/, '$1');
-    await del(`${page}.html`);
     return {
-      page
+      page,
+      IS_DEV
     };
   }))
   .pipe(twig())
   .pipe(htmlBeautify())
-  .pipe(dest('.'));
+  .pipe(htmlhint('.htmlhintrc'))
+  .pipe(htmlhint.reporter())
+  .pipe(gulpIf(!IS_OFFLINE, htmlValidator()))
+  .pipe(gulpIf(!IS_OFFLINE, htmlValidator.reporter()))
+  .pipe(dest('build'));
 
 const cssTest = () => src('src/less/**/*.less')
   .pipe(lintspaces({
@@ -70,26 +77,26 @@ const cssTest = () => src('src/less/**/*.less')
     ]
   }));
 
-const cssBuild = () => src('src/less/style.less')
+const cssBuild = () => src(cssSources)
   .pipe(less())
   .pipe(postcss([
     autoprefixer()
   ]))
-  .pipe(dest('css'))
+  .pipe(dest('build/css'))
   .pipe(postcss([
     cssnano()
   ]))
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(dest('css'));
+  .pipe(dest('build/css'));
 
-const jsMin = () => src('js/sedona.js')
+const jsBuild = () => src(jsSources)
   .pipe(terser())
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(dest('js'));
+  .pipe(dest('build/js'));
 
 // Сборка спрайта
 const spriteBuild = () => src('src/sprite/**/*.svg')
@@ -97,7 +104,25 @@ const spriteBuild = () => src('src/sprite/**/*.svg')
   .pipe(svgstore({
     inlineSvg: true
   }))
-  .pipe(dest('img'));
+  .pipe(dest('build/img'));
+
+// Копируем статичные данные
+const copyFiles = () => src('src/as-is/**/*')
+  .pipe(dest('build'));
+
+// Копируем PP-превью
+const copyPP = () => src('pixelperfect/**/*')
+  .pipe(dest('build/img/pixelperfect'));
+
+// Копируем и минифицируем нормалайз
+const copyNormalize = () => src('node_modules/normalize.css/normalize.css')
+  .pipe(postcss([
+    cssnano()
+  ]))
+  .pipe(dest('build/css'));
+
+// Очистка билда
+const cleanBuild = () => del('build');
 
 const reload = (done) => {
   browserSync.reload();
@@ -108,19 +133,22 @@ const watchTask = () => {
   browserSync.init({
     cors: true,
     notify: false,
-    server: '.',
+    server: 'build',
     ui: false
   });
 
-  watch('src/twig/**/*.twig', series(htmlBuild, htmlTest, reload));
+  watch('src/twig/**/*.twig', series(htmlTest, htmlBuild, reload));
   watch('src/less/**/*.less', series(cssTest, cssBuild, reload));
-  watch('js/sedona.js', series(jsMin, reload));
+  watch('src/js/**/*.js', series(jsBuild, reload));
   watch('src/sprite/**/*.svg', series(cssTest, spriteBuild, htmlBuild, reload));
+  watch('src/as-is/**/*', series(copyFiles, reload));
+  watch('pixelperfect/**/*', series(copyPP, reload));
 };
 
 const test = parallel(htmlTest, cssTest);
-const build = series(spriteBuild, parallel(htmlBuild, cssBuild, jsMin));
+const compile = parallel(htmlBuild, cssBuild, jsBuild, copyFiles, copyNormalize);
+const build = series(parallel(test, cleanBuild), spriteBuild, compile);
 
 exports.test = test;
 exports.build = build;
-exports.default = series(test, build, watchTask);
+exports.default = series(build, copyPP, watchTask);
