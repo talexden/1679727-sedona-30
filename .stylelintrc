@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "stylelint-config-htmlacademy",
-    "stylelint-order-htmlacademy"
-  ]
-}
