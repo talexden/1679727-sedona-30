@@ -1,11 +1,7 @@
-# Личный проект [«Седона»](https://talexden.github.io/1679727-sedona-30/)
+# Личный проект [«Седона»](https://talexden.github.io/sedona/)
 
 * Студент: [Aleksey Titov](https://up.htmlacademy.ru/htmlcss/30/user/1679727).
 * Наставник: [Андрей Ефимов](https://up.htmlacademy.ru/htmlcss/30/user/367335).
-
----
-
-<a href="https://talexden.github.io/HTMLAcademy-Sedona">
 
 ---
 
